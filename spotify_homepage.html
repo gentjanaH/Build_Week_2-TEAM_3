@@ -1,350 +1,57 @@
-<!DOCTYPE html>
-<html lang="it">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify Style</title>
+<section class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="card my-3 rounded-start text-bg-secondary border-0">
+        <div class="row align-items-center">
+          <!-- Colonna immagini attaccata a sinistra -->
+          <div class="col-4">
+            <div
+              class="d-grid"
+              style="
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                width: 100%;
+                aspect-ratio: 1;
+              "
+            >
+              <img
+                src="https://placebear.com/50/50"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt=""
+              />
+              <img
+                src="https://placebear.com/50/50"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt=""
+              />
+              <img
+                src="https://placebear.com/50/50"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt=""
+              />
+              <img
+                src="https://placebear.com/50/50"
+                class="img-fluid w-100 h-100 object-fit-cover"
+                alt=""
+              />
+            </div>
+          </div>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+          <!-- Testo playlist -->
+          <div class="col-8">
+            <div class="card-body">
+              <p>Playlist</p>
+              <h5 class="card-title">Card title</h5>
+            </div>
+          </div>
 
-    <style>
-      body {
-        background-color: #121212;
-        color: white;
-        font-family: sans-serif;
-      }
-
-
-      h3 {
-        font-weight: 700;
-      }
-
-      /* CARD SPOTIFY */
-      .spotify-card {
-        background-color: #2a2a2a;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        height: 80px;
-        cursor: pointer;
-        transition: background-color 0.2s;
-        padding-right: 15px;
-      }
-
-        <div class="container">
-            <section>
-                <div class="row">
-                    <div class="col col-12 d-flex justify-content-between">
-                        <h3>Buonasera</h3>
-                        <div class="d-flex align-items-center">
-                            <a><i class="fa-solid fa-bell"></i></a>
-                            <a><i class="fa-regular fa-clock"></i></a>
-                            <a> <i class="fa-solid fa-gear"></i></a>
-                        </div>
-                    </div>
-                    <div class="col col-12 d-md-none mt-3">
-                        <a class="btn btn-dark rounded-pill me-3 ">Musica</a>
-                        <a class="btn btn-dark rounded-pill ">Bodcast e Show</a>
-
-      /* GRIGLIA IMMAGINI 2x2 */
-      .images-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        width: 80px;
-        height: 80px;
-        flex-shrink: 0;
-      }
-
-                </div>
-            </section>
-            <section class="container d-flex justify-content-evenly">
-                <div class="row row-cols-2 row-cols-md-3 g-2">
-                    <div class="card my-3 rounded-start text-bg-secondary border-0">
-                        <div class="row">
-
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col col-6 p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-
-      /* ICONS HEADER */
-      .icon-bar i {
-        font-size: 18px;
-        margin-left: 15px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container py-4">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3>Buonasera</h3>
-        <div class="icon-bar">
-          <i class="fa-regular fa-bell"></i>
-          <i class="fa-regular fa-clock"></i>
-          <i class="fa-solid fa-gear"></i>
+          <!-- Cuore e numero brani -->
+          <div class="col col-12 ps-4 pb-3">
+            <a><i class="fa-solid fa-heart"></i></a>
+            <p class="m-0">16 Brani</p>
+          </div>
         </div>
       </div>
-
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                   
-                    <!-- card2 -->
-                    <div class="card my-3 rounden-start text-bg-secondary border-0">
-                        <div class="row">
-
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col col-6 p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- card3 -->
-                    <div class="card my-3 rounded-start text-bg-secondary border-0">
-                        <div class="row">
-
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col col-6 p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- card4 -->
-                    <div class="card my-3 rounded-start text-bg-secondary border-0">
-                        <div class="row">
-
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col col-6 p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- card5 -->
-                    <div class="card my-3 rounded-start text-bg-secondary border-0">
-                        <div class="row">
-
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col col-6 p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- card6 -->
-                    <div class="card my-3 rounded-start text-bg-secondary border-0">
-                        <div class="row">
-
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col col-6 p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-                                    <div class="col col-6  p-0">
-                                        <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-           
-            <section class="container">
-                <div class="row">
-                    <div class="col col-12">
-                        <div class="card my-3 rounded-start text-bg-secondary border-0">
-                            <div class="row">
-
-                                <div class="col-4 p-5">
-                                    <div class="row ms-2">
-                                        <div class="col col-6 p-0">
-                                            <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                        </div>
-                                        <div class="col col-6 p-0">
-                                            <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                        </div>
-                                        <div class="col col-6 p-0">
-                                            <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                        </div>
-                                        <div class="col col-6 p-0">
-                                            <img src="https://placebear.com/50/50" class="img-fluid w-100" alt="">
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-8">
-                                    <div class="card-body">
-                                        <p>Playlist</p>
-                                        <h5 class="card-title">Card title</h5>
-
-                                    </div>
-                                </div>
-                                <div class="col col-12">
-                                    <div>
-                                        <a><i class="fa-solid fa-heart"></i></a>
-                                    </div>
-                                    <div>
-                                        <p>16 Brani</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </section>
-       
-        
-
-        <div class="col">
-          <div class="spotify-card">
-            <div class="images-grid">
-              <img src="https://picsum.photos/200?5" />
-              <img src="https://picsum.photos/200?6" />
-              <img src="httpsum.photos/200?7" />
-              <img src="https://picsum.photos/200?8" />
-            </div>
-            <p class="title">that fucking mood 🐍</p>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="spotify-card">
-            <div class="images-grid">
-              <img src="https://picsum.photos/200?9" />
-              <img src="https://picsum.photos/200?10" />
-              <img src="https://picsum.photos/200?11" />
-              <img src="https://picsum.photos/200?12" />
-            </div>
-            <p class="title">main character energy</p>
-          </div>
-        </div>
-      
     </div>
-  </body>
-</html>
+  </div>
+</section>
