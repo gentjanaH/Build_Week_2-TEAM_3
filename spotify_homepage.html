@@ -1,677 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="navbar.css" />
     <style>
-      .sidebar {
-        background-color: #000000;
-        height: 100vh;
-        padding: 20px 15px;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 250px;
-        overflow-y: auto;
-      }
+        .sidebar {
+            background-color: #000000;
+            height: 100vh;
+            padding: 20px 15px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            overflow-y: auto;
+        }
 
-      .sidebar a {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: #b3b3b3;
-        text-decoration: none;
-        padding: 8px 0;
-        font-size: 15px;
-      }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #b3b3b3;
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 15px;
+        }
 
-      .sidebar a:hover {
-        color: white;
-      }
+        .sidebar a:hover {
+            color: white;
+        }
 
-      .sidebar .section-title {
-        margin-top: 25px;
-        font-size: 13px;
-        text-transform: uppercase;
-        color: #888;
-      }
+        .sidebar .section-title {
+            margin-top: 25px;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #888;
+        }
 
-      /*NAVBAR*/
-      .topbar {
-        position: sticky;
-        top: 0;
-        background-color: #121212;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-        z-index: 10;
-      }
+        /*NAVBAR*/
+        .topbar {
+            position: sticky;
+            top: 0;
+            background-color: #121212;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 20px;
+            z-index: 10;
+        }
 
-      .topbar i {
-        position: sticky;
-        top: 0;
-        background-color: #121212;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-        z-index: 10;
-        border-bottom: 1px solid #222;
-      }
-      .main-content {
-        margin-left: 250px;
-        padding: 20px;
-        height: 100vh;
-        overflow-y: auto;
-      }
+        .topbar i {
+            position: sticky;
+            top: 0;
+            background-color: #121212;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 20px;
+            z-index: 10;
+            border-bottom: 1px solid #222;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        /* classi per arrotondare le immagini */
+        .rounded-top-left {
+            border-top-left-radius: 0.5rem;
+        }
+
+        .rounded-bottom-left {
+            border-bottom-left-radius: 0.5rem;
+        }
     </style>
-  </head>
+</head>
 
-  <body class="text-white bg-black">
+<body class="text-white bg-black">
     <div class="container-fluid mx-0">
-      <div class="row">
-        <!-- colonna a sinistra -->
-        <div class="col d-none d-md-block col-md-3">
-          <div class="sidebar">
-            <h4 class="text-white mb-4">Spotify</h4>
+        <div class="row">
+            <!-- colonna a sinistra -->
+            <div class="col d-none d-md-block col-md-3">
+                <div class="sidebar">
+                    <h4 class="text-white mb-4">Spotify</h4>
 
-            <a href="#"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Cerca</a>
-            <a href="#"><i class="fa-solid fa-book"></i>La tua libreria</a>
+                    <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Cerca</a>
+                    <a href="#"><i class="fa-solid fa-book"></i>La tua libreria</a>
 
-            <div class="section-title mt-4">Playlist</div>
-            <a href="#"><i class="fa-solid fa-square-plus"></i>Crea playlist</a>
-            <a href="#"
-              ><i class="fa-solid fa-heart"></i>Brani che ti piacciono</a
-            >
-          </div>
-        </div>
-        <!-- colonna centrale -->
-        <div class="col col-12 col-md-7">
-          <main>
-            <div>
-              <section class="container">
+                    <div class="section-title mt-4">Playlist</div>
+                    <a href="#"><i class="fa-solid fa-square-plus"></i>Crea playlist</a>
+                    <a href="#"><i class="fa-solid fa-heart"></i>Brani che ti piacciono</a>
+                </div>
+            </div>
+            <!-- colonna centrale -->
+            <div class="col col-12 col-md-7">
+                <main>
+                    <div>
+                        <section class="container">
+                            <div class="row">
+                                <div class="col col-12 d-flex justify-content-between my-3">
+                                    <h3>Buonasera</h3>
+                                    <div class="d-flex align-items-center">
+                                        <a><i class="fa-solid fa-bell me-2"></i></a>
+                                        <a><i class="fa-regular fa-clock me-2"></i></a>
+                                        <a> <i class="fa-solid fa-gear"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col col-12 d-md-none my-3">
+                                    <a class="btn btn-dark rounded-pill me-3">Musica</a>
+                                    <a class="btn btn-dark rounded-pill">Podcast e Show</a>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="container">
+                            <div class="row row-cols-2 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card my-3 rounded-start text-bg-dark border-0">
+                                        <div class="row g-0">
+                                            <div class="col-5">
+                                                <div class="row g-0 h-100">
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-1.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
+                                                            alt="foto1" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-2.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto2" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-3.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
+                                                            alt="foto3" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-4.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto4" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7 p-0">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- card2 -->
+                                    <div class="card my-3 rounden-start text-bg-dark border-0">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <div class="row h-100 px-0">
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-5.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
+                                                            alt="foto5" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-6.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto6" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-7.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
+                                                            alt="foto7" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-8.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto8" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- card3 -->
+                                    <div class="card my-3 rounded-start text-bg-dark border-0">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <div class="row h-100">
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-9.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
+                                                            alt="foto9" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-10.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto10" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-11.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
+                                                            alt="foto11" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-12.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto12" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- card4 -->
+                                    <div class="card my-3 rounded-start text-bg-dark border-0" style="height: 118px;">
+                                        <div class="row h-100">
+                                            <div
+                                                class="col-5 d-flex justify-content-center align-items-center bg-success rounded-start">
+                                                <a><i class="fa-solid fa-heart"></i></a>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <!-- card5 -->
+                                    <div class="card my-3 rounded-start text-bg-dark border-0">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <div class="row h-100">
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-13.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
+                                                            alt="foto13" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-14.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto14" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-15.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
+                                                            alt="foto15" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-16.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto16" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <!-- card6 -->
+                                    <div class="card my-3  text-bg-dark border-0">
+                                        <div class="row h-100">
+                                            <div class="col-5 p-0">
+                                                <img src="./assets/main/image-17.jpg"
+                                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start"
+                                                    alt="foto17" />
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- sezione da mobile -->
+                        <section class="container d-md-none">
+                            <div class="row">
+                                <div class="col col-12">
+                                    <div class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden">
+                                        <div class="row">
+                                            <div class="col-5">
+                                                <div class="row h-100">
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-18.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto18" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/search/image-2.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto02" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/main/image-19.jpg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="fto19" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/search/image-1.jpeg"
+                                                            class="img-fluid w-100 h-100 object-fit-cover"
+                                                            alt="foto01" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="card-body">
+                                                    <p>Playlist</p>
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2">
+                                                <div>
+                                                    <a><i class="fa-solid fa-heart"></i></a>
+                                                    <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <p class="m-0 pe-2">16 Brani</p>
+                                                    <a class="btn bg-black rounded-circle"><i
+                                                            class="fa-solid fa-play text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2 -->
+                                <div class="col col-12">
+                                    <div class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="row">
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/search/image-3.jpg" class="img-fluid w-100"
+                                                            alt="foto03" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/search/image-5.jpg" class="img-fluid w-100"
+                                                            alt="foto05" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/search/image-6.jpg" class="img-fluid w-100"
+                                                            alt="foto06" />
+                                                    </div>
+                                                    <div class="col col-6 p-0">
+                                                        <img src="./assets/search/image-7.jpg" class="img-fluid w-100"
+                                                            alt="foto07" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <p>Playlist</p>
+                                                    <h5 class="card-title">Card title</h5>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2">
+                                                <div>
+                                                    <a><i class="fa-solid fa-heart"></i></a>
+                                                    <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <p class="m-0 pe-2">16 Brani</p>
+                                                    <a class="btn bg-black rounded-circle"><i
+                                                            class="fa-solid fa-play text-white"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- sezione desktop -->
+                        <section class="container d-none d-md-block">
+                            <div class="row">
+                                <div class="col col-12 d-flex justify-content-between align-items-center">
+                                    <h5>Altro di ciò che ti piace</h5>
+                                    <p><a>VISUALIZZA TUTTO</a></p>
+                                </div>
+                                <div class="col col-md-4 col-lg-3">
+                                    <!-- card da aggiungere -->
+                                    <div class="card text-bg-dark">
+                                        <img src="./assets/search/image-7.jpg" class="card-img-top img-thumbnail"
+                                            alt="img-07" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and
+                                                make up the bulk of the card’s content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4 col-lg-3">
+                                    <!-- card da aggiungere -->
+                                    <div class="card text-bg-dark">
+                                        <img src="./assets/search/image-7.jpg" class="card-img-top img-thumbnail"
+                                            alt="img-07" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and
+                                                make up the bulk of the card’s content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4 col-lg-3">
+                                    <!-- card da aggiungere -->
+                                    <div class="card text-bg-dark">
+                                        <img src="./assets/search/image-7.jpg" class="card-img-top img-thumbnail"
+                                            alt="img-07" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and
+                                                make up the bulk of the card’s content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-md-4 col-lg-3">
+                                    <!-- card da aggiungere -->
+                                    <div class="card text-bg-dark">
+                                        <img src="./assets/search/image-7.jpg" class="card-img-top img-thumbnail"
+                                            alt="img-07" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and
+                                                make up the bulk of the card’s content.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </div>
+            <!-- colonna a destra -->
+            <div class="col d-none d-md-block col-md-2">
                 <div class="row">
-                  <div class="col col-12 d-flex justify-content-between my-3">
-                    <h3>Buonasera</h3>
-                    <div class="d-flex align-items-center">
-                      <a><i class="fa-solid fa-bell"></i></a>
-                      <a><i class="fa-regular fa-clock"></i></a>
-                      <a> <i class="fa-solid fa-gear"></i></a>
+                    <div class="col col-12 d-flex justify-content-between align-items-center my-3">
+                        <div>
+                            <p class="m-0">Attività amici</p>
+                        </div>
+                        <div>
+                            <a><i class="fa-solid fa-user-group"></i></a>
+                            <a><i class="fa-solid fa-x"></i></a>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col col-12 d-md-none mt-3">
-                    <a class="btn btn-dark rounded-pill me-3">Musica</a>
-                    <a class="btn btn-dark rounded-pill">Podcast e Show</a>
-                  </div>
+                    <div class="col col-12">
+                        <div class="card mb-3 h-100 bg-black text-white">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-3">
+                                    <img src="./assets/search/image-9.jpg" class="img-fluid rounded-circle" alt="..." />
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-bottom">
+                                            <h6 class="card-title m-0">Amico</h6>
+                                            <p class="mb-1">4 ore</p>
+                                        </div>
+                                        <p class="card-text mb-1">Canzone</p>
+                                        <p class="card-text m-0">Album</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12">
+                        <div class="card mb-3 h-100 bg-black text-white">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-3">
+                                    <img src="./assets/search/image-9.jpg" class="img-fluid rounded-circle" alt="..." />
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-bottom">
+                                            <h6 class="card-title m-0">Amico</h6>
+                                            <p class="mb-1">4 ore</p>
+                                        </div>
+                                        <p class="card-text mb-1">Canzone</p>
+                                        <p class="card-text m-0">Album</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-12">
+                        <div class="card mb-3 h-100 bg-black text-white">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-3">
+                                    <img src="./assets/search/image-9.jpg" class="img-fluid rounded-circle" alt="..." />
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-bottom">
+                                            <h6 class="card-title m-0">Amico</h6>
+                                            <p class="mb-1">4 ore</p>
+                                        </div>
+                                        <p class="card-text mb-1">Canzone</p>
+                                        <p class="card-text m-0">Album</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </section>
-              <section class="container d-flex justify-content-evenly">
-                <div class="row row-cols-2 row-cols-md-3 g-2">
-                  <div
-                    class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                  >
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100">
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-1.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto1"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-2.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto2"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-3.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto3"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-4.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto4"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-7 p-0">
-                        <div class="ps-2">
-                          <h6>Card title</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- card2 -->
-                  <div
-                    class="card my-3 rounden-start text-bg-dark border-0 overflow-hidden"
-                  >
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100 px-0">
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-5.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto5"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-6.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto6"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-7.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto7"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-8.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto8"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- card3 -->
-                  <div
-                    class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                  >
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100">
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-9.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto9"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-10.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto10"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-11.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto11"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-12.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto12"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- card4 -->
-                  <div
-                    class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                  >
-                    <div class="row h-100">
-                      <div
-                        class="col-5 d-flex justify-content-center align-items-center bg-success"
-                      >
-                        <a><i class="fa-solid fa-heart"></i></a>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- card5 -->
-                  <div
-                    class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                  >
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100">
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-13.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto13"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-14.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto14"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-15.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto15"
-                            />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img
-                              src="./assets/main/image-16.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto16"
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- card6 -->
-                  <div
-                    class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                  >
-                    <div class="row h-100">
-                      <div class="col-5 p-0">
-                        <img
-                          src="./assets/main/image-17.jpg"
-                          class="img-fluid w-100 h-100 object-fit-cover"
-                          alt="foto17"
-                        />
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- sezione da mobile -->
-              <section class="container d-md-none">
-                <div class="row">
-                  <div class="col col-12">
-                    <div
-                      class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                    >
-                      <div class="row">
-                        <div class="col-5">
-                          <div class="row h-100">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-18.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto18"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-2.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto02"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-19.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="fto19"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-1.jpeg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto01"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <p>Playlist</p>
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                        <div
-                          class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2"
-                        >
-                          <div>
-                            <a><i class="fa-solid fa-heart"></i></a>
-                            <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <p class="m-0 pe-2">16 Brani</p>
-                            <a class="btn bg-black rounded-circle"
-                              ><i class="fa-solid fa-play text-white"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- 2 -->
-                  <div class="col col-12">
-                    <div
-                      class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                    >
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="row">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-3.jpg"
-                                class="img-fluid w-100"
-                                alt="foto03"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-5.jpg"
-                                class="img-fluid w-100"
-                                alt="foto05"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-6.jpg"
-                                class="img-fluid w-100"
-                                alt="foto06"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-7.jpg"
-                                class="img-fluid w-100"
-                                alt="foto07"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-8">
-                          <div class="card-body">
-                            <p>Playlist</p>
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                        <div
-                          class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2"
-                        >
-                          <div>
-                            <a><i class="fa-solid fa-heart"></i></a>
-                            <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <p class="m-0 pe-2">16 Brani</p>
-                            <a class="btn bg-black rounded-circle"
-                              ><i class="fa-solid fa-play text-white"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- sezione desktop -->
-              <section class="container d-none d-md-block">
-                <div class="row">
-                  <div
-                    class="col col-12 d-flex justify-content-between align-items-center"
-                  >
-                    <h5>Altro di ciò che ti piace</h5>
-                    <p><a>VISUALIZZA TUTTO</a></p>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
             </div>
-          </main>
         </div>
-        <!-- colonna a destra -->
-        <div class="col d-none d-md-block col-md-2">
-          <div class="row">
-            <div
-              class="col col-12 d-flex justify-content-between align-items-center my-3"
-            >
-              <div><p class="m-0">Attività amici</p></div>
-              <div>
-                <a><i class="fa-solid fa-user-group"></i></a>
-                <a><i class="fa-solid fa-x"></i></a>
-              </div>
-            </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="./assets/search/image-9.jpg"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Amico</h6>
-                        <p class="mb-1">4 ore</p>
-                      </div>
-                      <p class="card-text mb-1">Canzone</p>
-                      <p class="card-text m-0">Album</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="./assets/search/image-9.jpg"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Amico</h6>
-                        <p class="mb-1">4 ore</p>
-                      </div>
-                      <p class="card-text mb-1">Canzone</p>
-                      <p class="card-text m-0">Album</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="./assets/search/image-9.jpg"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Amico</h6>
-                        <p class="mb-1">4 ore</p>
-                      </div>
-                      <p class="card-text mb-1">Canzone</p>
-                      <p class="card-text m-0">Album</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"
-      ></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
     </div>
-    <nav
-      class="navbar navbar-dark fixed-bottom d-lg-none"
-      id="spotify-bar-bottom"
-    >
-      <div class="container-fluid justify-content-around">
-        <a class="nav-link text-center" href="#">
-          <i class="fa-solid fa-house"></i>
-          <span class="d-block">Home</span>
-        </a>
+    <nav class="navbar navbar-dark fixed-bottom d-lg-none" id="spotify-bar-bottom">
+        <div class="container-fluid justify-content-around">
+            <a class="nav-link text-center" href="#">
+                <i class="fa-solid fa-house"></i>
+                <span class="d-block">Home</span>
+            </a>
 
-        <a class="nav-link text-center" href="#">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span class="d-block">Cerca</span>
-        </a>
+            <a class="nav-link text-center" href="#">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="d-block">Cerca</span>
+            </a>
 
-        <a class="nav-link text-center" href="#">
-          <i class="fa-regular fa-folder-closed"></i>
-          <span class="d-block">La tua libreria</span>
-        </a>
-      </div>
+            <a class="nav-link text-center" href="#">
+                <i class="fa-regular fa-folder-closed"></i>
+                <span class="d-block">La tua libreria</span>
+            </a>
+        </div>
     </nav>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
