@@ -39,18 +39,20 @@ const albumTracks = (albumObj) => {
     const seconds = String(track.duration % 60).padStart(2, "0");
 
     trackContainer.innerHTML += `
-            <div class="track-row d-flex align-items-center py-2">
-                <span class="col-1">${i + 1}</span>
-                <div class="col-6 d-flex flex-column">
-                    <span class="song-title">${track.title}</span>
-                    <span class="song-artist text-secondary">${
-                      track.artist.name
-                    }</span> 
-                </div>
-                <span class="col-3 d-none d-md-block text-center text-secondary">
-                ${track.rank.toLocaleString()}
-                </span>
-                <span class="col-2 text-end text-secondary">${minutes}:${seconds}</span>
+             <div class="track-row">
+              <span class="track-index">
+                <span class="track-number">${i + 1}</span>
+                <i class="fa-solid fa-play play-hover"></i>
+              </span>
+
+              <div class="track-title-block">
+                <span class="track-title">${track.title}</span>
+                <span class="track-artist">${track.artist.name}</span>
+              </div>
+
+              <span class="track-plays">${track.rank.toLocaleString()}</span>
+
+              <span class="track-duration">${minutes}:${seconds}</span>
             </div>
                     `;
   });
