@@ -36,7 +36,7 @@ const getData = () => {
         data.duration
       );
 
-      albumImage.src = albumObj.cover;
+      albumImage.setAttribute("src", albumObj.cover);
       albumName.innerText = albumObj.title;
       albumData.innerText = `${albumObj.name} • ${albumObj.release_date.slice(
         0,
