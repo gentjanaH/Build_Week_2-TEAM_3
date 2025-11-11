@@ -1,0 +1,82 @@
+/*SIDEBAR*/
+@media (min-width: 992px) {
+  .sidebar {
+    display: block;
+  }
+  .main-content {
+    margin-left: 250px;
+  }
+}
+
+.sidebar {
+  background-color: #000;
+  height: 100vh;
+  padding: 20px 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  overflow-y: auto;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b3b3b3;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.sidebar a:hover {
+  color: #fff;
+}
+
+.section-title {
+  margin-top: 25px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/*Main content*/
+.main-content {
+  padding: 20px;
+  min-height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/*Album header*/
+.album-header {
+  background: linear-gradient(to bottom, #d6b658, #121212 60%);
+}
+
+.album-cover {
+  width: 200px;
+}
+/*Button PLAY*/
+.play-btn {
+  width: 56px;
+  height: 56px;
+  background-color: #1db954;
+  border: none;
+}
+
+.play-btn:hover {
+  background-color: #1ed760;
+}
+
+.rounded-top-left {
+  border-top-left-radius: 0.5rem;
+}
+
+.rounded-bottom-left {
+  border-bottom-left-radius: 0.5rem;
+}
+
+#spotify-bar-bottom {
+  background: #121212;
+  border-top: 1px solid #333;
+}
