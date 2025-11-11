@@ -71,20 +71,36 @@
             <i class="fa-solid fa-ellipsis fs-4"></i>
           </section>
           <!-- TRACKLIST -->
-          <section class="tracklist px-4 mt-3">
-            <table class="table table-dark table-borderless align-middle">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Titolo</th>
-                  <th class="d-none d-md-table-cell">Artista</th>
-                  <th class="text-end">Durata</th>
-                </tr>
-              </thead>
-              <tbody id="track-body"></tbody>
-            </table>
+          <section class="tracklist px-4 mt-4">
+            <div class="track-header d-flex text-secondary mb-2">
+              <span class="col-1">#</span>
+              <span class="col-6">Titolo</span>
+              <span class="col-3 d-none d-md-block text-center"
+                >Riproduzioni</span
+              >
+              <span class="col-2 text-end"
+                ><i class="fa-regular fa-clock"></i
+              ></span>
+            </div>
+
+            <!-- SONG ROW -->
+            <div class="track-row d-flex align-items-center py-2">
+              <span class="col-1">1</span>
+
+              <div class="col-6 d-flex flex-column">
+                <span class="song-title">Canzone 1</span>
+                <span class="song-artist text-secondary">ARTISTA </span>
+              </div>
+
+              <span class="col-3 d-none d-md-block text-center text-secondary">
+                5.400.231
+              </span>
+
+              <span class="col-2 text-end text-secondary"> 3:24 </span>
+            </div>
           </section>
         </div>
+
         <!-- colonna a destra -->
         <div class="col d-none d-lg-block col-lg-2">
           <div class="row">
