@@ -46,3 +46,5 @@ const getArtist = function () {
       console.log("ERRORE", err);
     });
 };
+
+getArtist();
