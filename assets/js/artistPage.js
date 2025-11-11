@@ -40,15 +40,18 @@ const getArtist = function () {
     .then((tracks) => {
       const tracksArray = tracks.data;
       const totalResults = tracks.total;
-      tracksArray.forEach((track) => {
-        const title = track.title;
-        const duration = track.duration;
-        const trackId = track.id;
-        const songPreview = track.preview;
-        const trackThumbnail = track.album.cover_medium;
-        // MANIPOLAZIONE e TRAVERSING DOM:
+      tracksArray.forEach((track, index) => {
+        if (index < 5) {
+          const trackNumber = index + 1;
+          const title = track.title;
+          const duration = track.duration;
+          const trackId = track.id;
+          const songPreview = track.preview;
+          const trackThumbnail = track.album.cover_medium;
+          // MANIPOLAZIONE e TRAVERSING DOM:
 
-        // FINE MANIPOLAZIONE
+          // FINE MANIPOLAZIONE
+        }
       });
     })
     .catch((err) => {
