@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="navbar.css" />
     <link rel="stylesheet" href="./style/homepage.css" />
 
@@ -33,7 +34,31 @@
                     <a href="#"><i class="fa-solid fa-heart"></i>Brani che ti piacciono</a>
                     <a href="#"><i class="fa-solid fa-bookmark text-success"></i>I tuoi
                         episodi</a>
+
+                    <!-- fake play list -->
+                    <div class="border-top">
+                        <ul class="list-group-item list-unstyled fs-6 ">
+                            <a href="#">
+                                <li>Canzoni da cantare in auto</li>
+                            </a>
+                            <a href="#">
+                                <li>Musica allegra</li>
+                            </a>
+                            <a href="#">
+                                <li>Quando sono triste</li>
+                            </a>
+                            <a href="#">
+                                <li>La mia playlist</li>
+                            </a>
+                            <a href="#">
+                                <li>Nel mare blu</li>
+                            </a>
+
+                        </ul>
+                    </div>
                 </div>
+
+
 
             </div>
             <!-- colonna centrale -->
@@ -42,6 +67,136 @@
                     <div>
                         <section class="container">
                             <div class="row">
+
+                                <!-- sezione annunci -->
+                                <div class="col d-none d-lg-block col-lg-12">
+                                    <!-- inizio carosello -->
+                                    <button onclick="hideSection(event)"
+                                        class="bnt bg-transparent border-0 text-light fw-light"
+                                        style="font-size: 12px">Nascondi
+                                        annunci</button>
+                                    <div id="carouselExampleAutoplaying" class="carousel slide mt-3"
+                                        data-bs-ride="carousel">
+
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="card mb-3 text-bg-dark">
+                                                    <div class="row g-0">
+                                                        <div class="col-md-4">
+                                                            <img src="./assets/search/image-17.jpg"
+                                                                class="img-fluid rounded-1" alt="...">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div
+                                                                class="card-body d-flex justify-content-between align-items-center">
+                                                                <h5>Album</h5>
+
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Card title</h5>
+                                                                <p class="card-title">Artista</p>
+                                                                <p class="card-text"><small
+                                                                        class="text-body-secondary">Ascolta il nuovo
+                                                                        singolo.</small></p>
+                                                                <div>
+                                                                    <!-- bottoni -->
+                                                                    <button
+                                                                        class="btn btn-success rounded-pill me-2">Play</button>
+                                                                    <button
+                                                                        class="btn bg-black rounded-pill text-white me-2">Salva</button>
+                                                                    <a href="#"><i
+                                                                            class="fa-solid fa-ellipsis text-light"></i></a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="card mb-3 text-bg-dark">
+                                                    <div class="row g-0">
+                                                        <div class="col-md-4">
+                                                            <img src="./assets/search/image-17.jpg"
+                                                                class="img-fluid rounded-1" alt="...">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div
+                                                                class="card-body d-flex justify-content-between align-items-center">
+                                                                <h5>Album</h5>
+
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Card title</h5>
+                                                                <p class="card-title">Artista</p>
+                                                                <p class="card-text"><small
+                                                                        class="text-body-secondary">Ascolta il nuovo
+                                                                        singolo.</small></p>
+                                                                <div>
+                                                                    <!-- bottoni -->
+                                                                    <button
+                                                                        class="btn btn-success rounded-pill me-2">Play</button>
+                                                                    <button
+                                                                        class="btn bg-black rounded-pill text-white me-2">Salva</button>
+                                                                    <a href="#"><i
+                                                                            class="fa-solid fa-ellipsis text-light"></i></a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item" id="carosello-annunci">
+                                                <div class="card mb-3 text-bg-dark">
+                                                    <div class="row g-0">
+                                                        <div class="col-md-4">
+                                                            <img src="./assets/search/image-17.jpg"
+                                                                class="img-fluid rounded-1" alt="...">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                            <div
+                                                                class="card-body d-flex justify-content-between align-items-center">
+                                                                <h5>Album</h5>
+
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Card title</h5>
+                                                                <p class="card-title">Artista</p>
+                                                                <p class="card-text"><small
+                                                                        class="text-body-secondary">Ascolta il nuovo
+                                                                        singolo.</small></p>
+                                                                <div>
+                                                                    <!-- bottoni -->
+                                                                    <button
+                                                                        class="btn btn-success rounded-pill me-2">Play</button>
+                                                                    <button
+                                                                        class="btn bg-black rounded-pill text-white me-2">Salva</button>
+                                                                    <a href="#"><i
+                                                                            class="fa-solid fa-ellipsis text-light"></i></a>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                    <!-- fine carosello -->
+
+                                </div>
+                                <!-- fine sezione annunci -->
                                 <div class="col col-12 d-flex justify-content-between my-3">
                                     <h3>Buonasera</h3>
                                     <div class="d-flex align-items-center">
@@ -59,10 +214,11 @@
                         <section class="container">
                             <div class="row row-cols-2 row-cols-md-3 g-4">
                                 <div class="col">
-                                    <div class="card my-3 rounded-start text-bg-dark border-0">
-                                        <div class="row g-0">
+                                    <!-- card1 -->
+                                    <div class="card my-3 rounden-start text-bg-dark border-0">
+                                        <div class="row">
                                             <div class="col-5">
-                                                <div class="row g-0 h-100">
+                                                <div class="row h-100 px-0">
                                                     <div class="col col-6 p-0">
                                                         <img src="./assets/main/image-1.jpg"
                                                             class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
@@ -86,7 +242,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-7 p-0">
+                                            <div class="col-7">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Card title</h5>
                                                 </div>
@@ -170,11 +326,15 @@
                                 </div>
                                 <div class="col">
                                     <!-- card4 -->
-                                    <div class="card my-3 rounded-start text-bg-dark border-0" style="height: 118px;">
+                                    <div class="card my-3  text-bg-dark border-0">
                                         <div class="row h-100">
                                             <div
-                                                class="col-5 d-flex justify-content-center align-items-center bg-success rounded-start">
-                                                <a><i class="fa-solid fa-heart"></i></a>
+                                                class="col-5 p-0 position-relative bg-success d-flex align-items-center justify-content-center rounded-start">
+                                                <img src="./assets/main/image-17.jpg"
+                                                    class="img-fluid  w-100 h-100 opacity-0 rounded-start"
+                                                    alt="foto17" />
+                                                <a href="#" class="position-absolute text-light"><i
+                                                        class="fa-regular fa-heart fs-2"></i></a>
                                             </div>
 
                                             <div class="col-7">
@@ -532,10 +692,25 @@
     </aside>
     <!-- fine DESKTOP -->
     <!-- BARRA RIPRODUZIONE MOBILE -->
-    <aside class="position-fixed d-lg-none">
+    <aside>
+        <div class="container d-lg-none position-fixed text-bg-secondary text-white py-2 px-3 rounded-1 z-3 start-50 translate-middle-x"
+            style="bottom:60px;">
+            <div class="row">
+                <div class="col col-9 d-flex flex-grow-1 align-items-center">
+                    <img src="./assets/search/image-14.jpg" class="rounded-circle" style="width: 40px;">
+                    <h5 class="ms-4">Canzone in riproduzione</h5>
+                </div>
+                <div class="col col-3 d-flex justify-content-end align-items-center">
+                    <a href="#" class="text-light me-2"><i class="bi bi-speaker fs-2"></i></a>
+                    <a href="#" class="text-light me-2"><i class="fa-regular fa-heart fs-2"></i></a>
+                    <a href="#" class="text-light"><i class="fa-solid fa-circle-play fs-2"></i></a>
 
+                </div>
+            </div>
+
+        </div>
     </aside>
-    <!-- DINE MOBILE -->
+    <!-- FINE MOBILE -->
     <!-- fine barra di riproduzione musica -->
 
 
@@ -562,6 +737,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script src="./assets/js/homePage.js"></script>
+
 </body>
 
 </html>

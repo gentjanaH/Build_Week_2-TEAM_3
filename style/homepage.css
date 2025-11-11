@@ -89,3 +89,8 @@
     width: 100px;
     accent-color: #1db954;
 }
+
+/* NAV MOBILE */
+#spotify-bar-bottom {
+    height: 60px;
+}
