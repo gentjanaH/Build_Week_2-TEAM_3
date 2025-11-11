@@ -126,21 +126,26 @@
         <!-- colonna centrale -->
         <div class="col col-12 col-lg-7">
           <!-- HEADER ALBUM -->
-          <section class="album header p-4"></section>
+          <section
+            class="p-4"
+            style="background: linear-gradient(to bottom, #d6b658, #121212 60%)"
+          >
+            <div class="d-flex align-items-center">
+              <img
+                src=""
+                class="img-fluid rounded shadow"
+                style="width: 200px"
+                alt="Album cover"
+                id="album-image"
+              />
 
-          <div class="d-flex align-items-center">
-            <img
-              src="."
-              class="album-cover img-fluid rounded shadow"
-              alt="Album cover"
-            />
-
-            <div class="ms-4">
-              <p class="text-uppercase m-0" style="font-size: 12px">Album</p>
-              <h1 class="fw-bold display-4">Gioventù Brucata</h1>
-              <p class="m-0">
-                Pinguini Tattici Nucleari • 2017 • 12 brani, 53 min 20 sec.
-              </p>
+              <div class="ms-4">
+                <p class="text-uppercase m-0" style="font-size: 12px">Album</p>
+                <h1 class="fw-bold display-4" id="album-name"></h1>
+                <p class="m-0" id="album-data">
+                  Pinguini Tattici Nucleari • 2017 • 12 brani, 53 min 20 sec.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -274,5 +279,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="./assets/js/album.js"></script>
   </body>
 </html>
