@@ -80,3 +80,95 @@
   background: #121212;
   border-top: 1px solid #333;
 }
+
+/*Hover tracce*/
+.tracklist tbody tr:hover {
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+/* Mobile adapt */
+@media (max-width: 576px) {
+  .album-cover {
+    width: 140px;
+  }
+  .display-4 {
+    font-size: 1.8rem !important;
+  }
+  .tracklist table {
+    font-size: 14px;
+  }
+}
+/* TRACKLIST */
+.tracklist table {
+  width: 100%;
+  font-size: 14px;
+}
+
+.tracklist td:first-child {
+  width: 16px;
+  color: #b3b3b3;
+}
+
+.tracklist td:last-child {
+  text-align: end;
+  color: #b3b3b3;
+}
+
+/* BRANO IN EVIDENZA */
+.featured-track {
+  background-color: #181818;
+  border-radius: 8px;
+}
+
+.featured-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+/* Play grande */
+.play-lg {
+  width: 48px;
+  height: 48px;
+  background-color: #1db954;
+  border: none;
+}
+
+.play-lg:hover {
+  background-color: #1ed760;
+}
+
+/*Responsive*/
+@media (max-width: 576px) {
+  .featured-track {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featured-img {
+    margin-bottom: 10px;
+  }
+
+  .play-lg {
+    margin-top: 10px;
+  }
+
+  .tracklist table {
+    font-size: 13px;
+  }
+}
+
+/*Header album in colonna*/
+@media (max-width: 576px) {
+  .album-header .d-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+  .album-header .ms-4 {
+    margin-left: 0 !important;
+    margin-top: 12px;
+  }
+  .album-cover {
+    width: 160px !important;
+  }
+}
