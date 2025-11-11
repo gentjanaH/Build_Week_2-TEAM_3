@@ -1,4 +1,5 @@
 const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/412";
+// funzione callback all interno della MAIN
 const getTrackList = function (tracklist) {
   return fetch(tracklist)
     .then((res) => {
@@ -12,7 +13,7 @@ const getTrackList = function (tracklist) {
       return tracks;
     });
 };
-
+// FUNZIONE PRINCIPALE
 const getArtist = function () {
   fetch(endpoint)
     .then((res) => {
@@ -28,7 +29,12 @@ const getArtist = function () {
       const coverImgDesktop = artistDetails.picture_xl;
       const coverImgMobile = artistDetails.picture_big;
       const tracklist = artistDetails.tracklist;
+      // tracklist è l'URL endpoint da fetchare per ottenere tutte le tracce
       const fan = artistDetails.nb_fan;
+      // eseguo la funzione getTrackList con parametro tracklist ed esco da questo blocco then.
+      // MANIPOLAZIONE e TRAVERSING DOM:
+
+      // FINE MANIPOLAZIONE DOM
       return getTrackList(tracklist);
     })
     .then((tracks) => {
@@ -40,6 +46,9 @@ const getArtist = function () {
         const trackId = track.id;
         const songPreview = track.preview;
         const trackThumbnail = track.album.cover_medium;
+        // MANIPOLAZIONE e TRAVERSING DOM:
+
+        // FINE MANIPOLAZIONE
       });
     })
     .catch((err) => {
