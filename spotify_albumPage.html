@@ -19,6 +19,15 @@
     />
     <link rel="stylesheet" href="navbar.css" />
     <style>
+      @media (min-width: 992px) {
+        .sidebar {
+          display: block;
+        }
+
+        .main-content {
+          margin-left: 250px;
+        }
+      }
       .sidebar {
         background-color: #000000;
         height: 100vh;
@@ -38,6 +47,7 @@
         text-decoration: none;
         padding: 8px 0;
         font-size: 15px;
+        display: none;
       }
 
       .sidebar a:hover {
@@ -64,7 +74,7 @@
         z-index: 10;
       }
 
-      .topbar i {
+      .topbar {
         position: sticky;
         top: 0;
         background-color: #121212;
@@ -73,15 +83,14 @@
         align-items: center;
         justify-content: space-between;
         padding: 0px 20px;
-        z-index: 10;
-        border-bottom: 1px solid #222;
+        z-index: 999;
       }
 
       .main-content {
-        margin-left: 250px;
         padding: 20px;
-        height: 100vh;
+        min-height: 100vh;
         overflow-y: auto;
+        box-sizing: border-box;
       }
 
       /* classi per arrotondare le immagini */
@@ -116,458 +125,28 @@
         </div>
         <!-- colonna centrale -->
         <div class="col col-12 col-lg-7">
-          <main>
-            <div>
-              <section class="container">
-                <div class="row">
-                  <div class="col col-12 d-flex justify-content-between my-3">
-                    <h3>Buonasera</h3>
-                    <div class="d-flex align-items-center">
-                      <a><i class="fa-solid fa-bell me-2"></i></a>
-                      <a><i class="fa-regular fa-clock me-2"></i></a>
-                      <a> <i class="fa-solid fa-gear"></i></a>
-                    </div>
-                  </div>
-                  <div class="col col-12 d-md-none my-3">
-                    <a class="btn btn-dark rounded-pill me-3">Musica</a>
-                    <a class="btn btn-dark rounded-pill">Podcast e Show</a>
-                  </div>
-                </div>
-              </section>
-              <section class="container">
-                <div class="row row-cols-2 row-cols-md-3 g-4">
-                  <div class="col">
-                    <div class="card my-3 rounded-start text-bg-dark border-0">
-                      <div class="row g-0">
-                        <div class="col-5">
-                          <div class="row g-0 h-100">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-1.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
-                                alt="foto1"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-2.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto2"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-3.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
-                                alt="foto3"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-4.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto4"
-                              />
-                            </div>
-                          </div>
-                        </div>
+          <!-- HEADER ALBUM -->
+          <section
+            class="p-4"
+            style="background: linear-gradient(to bottom, #d6b658, #121212 60%)"
+          >
+            <div class="d-flex align-items-center">
+              <img
+                src="."
+                class="img-fluid rounded shadow"
+                style="width: 200px"
+                alt="Album cover"
+              />
 
-                        <div class="col-7 p-0">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <!-- card2 -->
-                    <div class="card my-3 rounden-start text-bg-dark border-0">
-                      <div class="row">
-                        <div class="col-5">
-                          <div class="row h-100 px-0">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-5.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
-                                alt="foto5"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-6.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto6"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-7.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
-                                alt="foto7"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-8.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto8"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <!-- card3 -->
-                    <div class="card my-3 rounded-start text-bg-dark border-0">
-                      <div class="row">
-                        <div class="col-5">
-                          <div class="row h-100">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-9.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
-                                alt="foto9"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-10.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto10"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-11.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
-                                alt="foto11"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-12.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto12"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <!-- card4 -->
-                    <div
-                      class="card my-3 rounded-start text-bg-dark border-0"
-                      style="height: 118px"
-                    >
-                      <div class="row h-100">
-                        <div
-                          class="col-5 d-flex justify-content-center align-items-center bg-success rounded-start"
-                        >
-                          <a><i class="fa-solid fa-heart"></i></a>
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <!-- card5 -->
-                    <div class="card my-3 rounded-start text-bg-dark border-0">
-                      <div class="row">
-                        <div class="col-5">
-                          <div class="row h-100">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-13.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
-                                alt="foto13"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-14.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto14"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-15.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
-                                alt="foto15"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-16.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto16"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <!-- card6 -->
-                    <div class="card my-3 text-bg-dark border-0">
-                      <div class="row h-100">
-                        <div class="col-5 p-0">
-                          <img
-                            src="./assets/main/image-17.jpg"
-                            class="img-fluid w-100 h-100 object-fit-cover rounded-start"
-                            alt="foto17"
-                          />
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- sezione da mobile -->
-              <section class="container d-md-none">
-                <div class="row">
-                  <div class="col col-12">
-                    <div
-                      class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                    >
-                      <div class="row">
-                        <div class="col-5">
-                          <div class="row h-100">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-18.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto18"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-2.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto02"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-19.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="fto19"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-1.jpeg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto01"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-7">
-                          <div class="card-body">
-                            <p>Playlist</p>
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                        <div
-                          class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2"
-                        >
-                          <div>
-                            <a><i class="fa-solid fa-heart"></i></a>
-                            <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <p class="m-0 pe-2">16 Brani</p>
-                            <a class="btn bg-black rounded-circle"
-                              ><i class="fa-solid fa-play text-white"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- 2 -->
-                  <div class="col col-12">
-                    <div
-                      class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden"
-                    >
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="row">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-3.jpg"
-                                class="img-fluid w-100"
-                                alt="foto03"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-5.jpg"
-                                class="img-fluid w-100"
-                                alt="foto05"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-6.jpg"
-                                class="img-fluid w-100"
-                                alt="foto06"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/search/image-7.jpg"
-                                class="img-fluid w-100"
-                                alt="foto07"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-8">
-                          <div class="card-body">
-                            <p>Playlist</p>
-                            <h5 class="card-title">Card title</h5>
-                          </div>
-                        </div>
-                        <div
-                          class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2"
-                        >
-                          <div>
-                            <a><i class="fa-solid fa-heart"></i></a>
-                            <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                          </div>
-                          <div class="d-flex align-items-center">
-                            <p class="m-0 pe-2">16 Brani</p>
-                            <a class="btn bg-black rounded-circle"
-                              ><i class="fa-solid fa-play text-white"></i
-                            ></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <!-- sezione desktop -->
-              <section class="container d-none d-md-block">
-                <div class="row">
-                  <div
-                    class="col col-12 d-flex justify-content-between align-items-center"
-                  >
-                    <h5>Altro di ciò che ti piace</h5>
-                    <p><a>VISUALIZZA TUTTO</a></p>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col col-md-4 col-lg-3">
-                    <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
-                      <img
-                        src="./assets/search/image-7.jpg"
-                        class="card-img-top img-thumbnail"
-                        alt="img-07"
-                      />
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <div class="ms-4">
+                <p class="text-uppercase m-0" style="font-size: 12px">Album</p>
+                <h1 class="fw-bold display-4">Gioventù Brucata</h1>
+                <p class="m-0">
+                  Pinguini Tattici Nucleari • 2017 • 12 brani, 53 min 20 sec.
+                </p>
+              </div>
             </div>
-          </main>
+          </section>
         </div>
         <!-- colonna a destra -->
         <div class="col d-none d-lg-block col-lg-2">
@@ -689,6 +268,5 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/album.js"></script>
   </body>
 </html>
