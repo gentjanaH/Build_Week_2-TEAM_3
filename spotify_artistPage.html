@@ -104,8 +104,9 @@
         object-fit: cover;
       }
       .imgPiacciono {
-        width: 4vw;
-        height: 4vw;
+        width: 100%;
+        height: auto;
+
         border-radius: 50%;
       }
     </style>
@@ -145,7 +146,9 @@
                 ></i
                 >Artista Verificato
               </h3>
-              <h1 class="text-uppercase ps-2" id="nomeArtista">NomeArtista</h1>
+              <h1 class="text-uppercase fs-1 ps-2" id="nomeArtista">
+                NomeArtista
+              </h1>
               <h4 id="ascoltatoriMensili" class="mt-1">
                 <span id="numeroAscoltatori "></span>ascoltatori mensili
               </h4>
@@ -169,7 +172,9 @@
               <!--inizio canzone-->
               <div class="braniPopolari col col-12 col-lg-8 mt-2">
                 <h4>Popolari</h4>
-                <div class="brano d-flex flex-row align-items-center mt-3">
+                <div
+                  class="brano justify-content-between d-flex flex-row align-items-center mt-3"
+                >
                   <p class="pe-3">1</p>
                   <div class="immagineCanzone px-3">
                     <img
@@ -185,41 +190,9 @@
 
                 <!--fine canzone-->
 
-                <div class="brano d-flex flex-row align-items-center">
-                  <p class="pe-3">1</p>
-                  <div class="immagineCanzone px-3">
-                    <img
-                      src="assets/main/image-1.jpg"
-                      class="album-cover"
-                      alt=""
-                    />
-                  </div>
-                  <p id="titoloCanzone" class="px-3">nomecanzone</p>
-                  <p id="ascoltatoriTotali" class="px-3">234.234.345</p>
-                  <p id="durataCanzone" class="px-3">3:23</p>
-                </div>
-
-                <!--fine canzone-->
-                <!--fine canzone-->
-
-                <div class="brano d-flex flex-row align-items-center">
-                  <p class="pe-3">1</p>
-                  <div class="immagineCanzone px-3">
-                    <img
-                      src="assets/main/image-1.jpg"
-                      class="album-cover"
-                      alt=""
-                    />
-                  </div>
-                  <p id="titoloCanzone" class="px-3">nomecanzone</p>
-                  <p id="ascoltatoriTotali" class="px-3">234.234.345</p>
-                  <p id="durataCanzone" class="px-3">3:23</p>
-                </div>
-
-                <!--fine canzone-->
-                <!--fine canzone-->
-
-                <div class="brano d-flex flex-row align-items-center">
+                <div
+                  class="brano justify-content-between d-flex flex-row align-items-center"
+                >
                   <p class="pe-3">1</p>
                   <div class="immagineCanzone px-3">
                     <img
@@ -236,7 +209,47 @@
                 <!--fine canzone-->
                 <!--fine canzone-->
 
-                <div class="brano d-flex flex-row align-items-center">
+                <div
+                  class="brano justify-content-between d-flex flex-row align-items-center"
+                >
+                  <p class="pe-3">1</p>
+                  <div class="immagineCanzone px-3">
+                    <img
+                      src="assets/main/image-1.jpg"
+                      class="album-cover"
+                      alt=""
+                    />
+                  </div>
+                  <p id="titoloCanzone" class="px-3">nomecanzone</p>
+                  <p id="ascoltatoriTotali" class="px-3">234.234.345</p>
+                  <p id="durataCanzone" class="px-3">3:23</p>
+                </div>
+
+                <!--fine canzone-->
+                <!--fine canzone-->
+
+                <div
+                  class="brano justify-content-between d-flex flex-row align-items-center"
+                >
+                  <p class="pe-3">1</p>
+                  <div class="immagineCanzone px-3">
+                    <img
+                      src="assets/main/image-1.jpg"
+                      class="album-cover"
+                      alt=""
+                    />
+                  </div>
+                  <p id="titoloCanzone" class="px-3">nomecanzone</p>
+                  <p id="ascoltatoriTotali" class="px-3">234.234.345</p>
+                  <p id="durataCanzone" class="px-3">3:23</p>
+                </div>
+
+                <!--fine canzone-->
+                <!--fine canzone-->
+
+                <div
+                  class="brano justify-content-between d-flex flex-row align-items-center"
+                >
                   <p class="pe-3">1</p>
                   <div class="immagineCanzone px-3">
                     <img
@@ -255,14 +268,14 @@
               <div id="braniPiacciono" class="col col-lg-4 mt-2">
                 <h4>Brani che ti Piacciono</h4>
                 <div class="piaccionoFotoTesto row mt-3">
-                  <div class="col col-lg-3">
+                  <div class="col col-3">
                     <img
                       class="imgPiacciono"
                       src="assets/main/image-7.jpg"
                       alt=""
                     />
                   </div>
-                  <div class="col col-lg-8 ms-2">
+                  <div class="col col-8 ms-2">
                     <h5>Hai messo mi piace a 11 brani</h5>
                     <p>di <span>nome artista</span></p>
                   </div>
@@ -277,6 +290,50 @@
           <h5 class="mt-3">Uscite popolari</h5>
 
           <div class="row albumPopolari mt-3">
+            <div class="col col-lg-4 contenitoreAlbum">
+              <div class="card" style="background-color: #000000; color: white">
+                <img
+                  src="assets/main/image-11.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body p-0 pt-1">
+                  <h5 class="card-title">Nome Albun</h5>
+                  <p class="card-text">2025-album</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-4 contenitoreAlbum">
+              <div class="card" style="background-color: #000000; color: white">
+                <img
+                  src="assets/main/image-11.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body p-0 pt-1">
+                  <h5 class="card-title">Nome Albun</h5>
+                  <p class="card-text">2025-album</p>
+                </div>
+              </div>
+            </div>
+            <div class="col col-lg-4 contenitoreAlbum">
+              <div class="card" style="background-color: #000000; color: white">
+                <img
+                  src="assets/main/image-11.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body p-0 pt-1">
+                  <h5 class="card-title">Nome Albun</h5>
+                  <p class="card-text">2025-album</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--seconda sezione album-->
+          <h5 class="mt-4 mb-4">Nuove uscite</h5>
+          <div class="row albumNuovi mt-3">
             <div class="col col-lg-4 contenitoreAlbum">
               <div class="card" style="background-color: #000000; color: white">
                 <img
