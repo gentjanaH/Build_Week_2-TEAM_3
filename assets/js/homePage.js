@@ -14,3 +14,18 @@ const hideSection = function (e) {
     }
 
 }
+
+// funzione per mostrare il campo di ricerca
+const searchSide = document.getElementById("toggleSearch")
+const search = function () {
+    searchSide.addEventListener("click", function (e) {
+        e.preventDefault()
+        const input = document.getElementById("searchInput")
+        input.classList.toggle("d-none")
+        if (!input.classList.contains("d-none")) {
+
+            input.focus()
+        }
+    })
+}
+search()
