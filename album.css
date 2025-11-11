@@ -172,3 +172,90 @@
     width: 160px !important;
   }
 }
+/* TRACKLIST HEADER */
+.track-header {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  margin-top: 20px;
+  border-bottom: 1px solid #2a2a2a;
+  color: #b3b3b3;
+  font-size: 13px;
+  letter-spacing: 0.7px;
+}
+
+.track-header i {
+  font-size: 14px;
+}
+/* TRACK ROW */
+.track-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.track-row:hover {
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+/* TRACCIA E PLAY HOVER*/
+.track-index {
+  width: 24px;
+  text-align: center;
+  color: #b3b3b3;
+  position: relative;
+}
+
+.track-index .play-hover {
+  display: none;
+  color: #1db954;
+}
+
+.track-row:hover .track-index .track-number {
+  display: none;
+}
+
+.track-row:hover .track-index .play-hover {
+  display: inline-block;
+}
+/*TITOLO E ARTISTA*/
+.track-title-block {
+  flex-grow: 1;
+}
+
+.track-title {
+  color: #fff;
+  margin: 0;
+  font-size: 15px;
+}
+
+.track-artist {
+  color: #b3b3b3;
+  font-size: 13px;
+  margin-top: -2px;
+}
+
+/*RIPRODUZIONI*/
+.track-plays {
+  width: 120px;
+  text-align: center;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+/*DURATA*/
+.track-duration {
+  width: 50px;
+  text-align: right;
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+/*MOBILE*/
+@media (max-width: 768px) {
+  .track-plays {
+    display: none;
+  }
+}
