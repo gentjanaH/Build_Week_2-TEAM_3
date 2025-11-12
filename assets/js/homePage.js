@@ -137,13 +137,3 @@ input.addEventListener("input", (event) => {
   //   finder(parameter);
 >>>>>>> main
 });
-
-// QUESTA SOTTO RISOLVE IL BAD REQUEST:
-// input.addEventListener("input", (event) => {
-//   parameter = event.target.value.trim();
-//   if (parameter.length >= 1) {
-//     finder(parameter);
-//   } else {
-//     cardContainer.innerHTML = "";
-//   }
-// });
