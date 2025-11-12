@@ -26,8 +26,8 @@
     <div class="container-fluid mx-0">
       <div class="row">
         <!-- colonna a sinistra -->
-        <div class="col d-none d-lg-block col-lg-3">
-          <div class="sidebar">
+        <div class="col d-none d-lg-block col-lg-3 colonnaSinistraAlbum p-0">
+          <div class="sidebar pe-0">
             <h4 class="text-white mb-4">Spotify</h4>
 
             <a href="#"><i class="fa-solid fa-house"></i>Home</a>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <!-- colonna centrale -->
-        <div class="col col-12 col-lg-7">
+        <div class="col col-12 col-lg-7 p-0">
           <!-- HEADER ALBUM -->
           <section class="album-header p-4">
             <div class="d-flex align-items-center">
@@ -51,6 +51,7 @@
                 class="album-cover img-fluid rounded shadow"
                 alt="Album cover"
                 id="album-image"
+                crossorigin="anonymous"
               />
 
               <div class="ms-4">
@@ -62,39 +63,40 @@
           </section>
 
           <!-- CONTROLLI -->
-          <section class="p-4 d-flex align-items-center">
-            <button class="btn play-btn rounded-circle me-4">
-              <i class="fa-solid fa-play"></i>
-            </button>
+          <div class="parteOpaca">
+            <section class="p-4 d-flex align-items-center">
+              <button class="btn play-btn rounded-circle me-4">
+                <i class="fa-solid fa-play"></i>
+              </button>
 
-            <button id="album-heart" class="icon-btn me-4">
-              <i class="fa-regular fa-heart fs-4"></i>
-            </button>
+              <button id="album-heart" class="icon-btn me-4">
+                <i class="fa-regular fa-heart fs-4"></i>
+              </button>
 
-            <button id="album-menu" class="icon-btn">
-              <i class="fa-solid fa-ellipsis fs-4"></i>
-            </button>
-          </section>
-          <!-- TRACKLIST -->
-          <section class="tracklist px-4 mt-4">
-            <div class="track-header d-flex text-secondary mb-2">
-              <span class="col-1">#</span>
-              <span class="col-6">Titolo</span>
-              <span class="col-3 d-none d-md-block text-center"
-                >Riproduzioni</span
-              >
-              <span class="col-2 text-end"
-                ><i class="fa-regular fa-clock"></i
-              ></span>
-            </div>
+              <button id="album-menu" class="icon-btn">
+                <i class="fa-solid fa-ellipsis fs-4"></i>
+              </button>
+            </section>
+            <!-- TRACKLIST -->
+            <section class="tracklist px-4 mt-4">
+              <div class="track-header d-flex text-secondary mb-2">
+                <span class="col-1">#</span>
+                <span class="col-6">Titolo</span>
+                <span class="col-3 d-none d-md-block ps-4 text-center"
+                  >Riproduzioni</span
+                >
+                <span class="col-2 text-end"
+                  ><i class="fa-regular fa-clock"></i
+                ></span>
+              </div>
 
-            <!-- SONG ROW -->
-            <div id="track-list"></div>
-          </section>
+              <!-- SONG ROW -->
+              <div id="track-list"></div>
+            </section>
+          </div>
         </div>
-
         <!-- colonna a destra -->
-        <div class="col d-none d-lg-block col-lg-2">
+        <div class="col d-none d-lg-block col-lg-2 f colonnaDestraAlbum">
           <div class="row">
             <div
               class="col col-12 d-flex justify-content-between align-items-center my-3"
@@ -207,6 +209,7 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
     <script src="./assets/js/album.js"></script>
   </body>
 </html>
