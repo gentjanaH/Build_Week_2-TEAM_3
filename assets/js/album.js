@@ -102,3 +102,44 @@ heartBtn.addEventListener("click", () => {
     heartIcon.classList.add("fa-regular");
   }
 });
+// funzione per prendere il colore medio
+
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+function getAverageColor(image, sampleSize = 50) {
+  const w = sampleSize;
+  const h = sampleSize;
+  canvas.width = w;
+  canvas.height = h;
+  ctx.drawImage(image, 0, 0, w, h);
+  const data = ctx.getImageData(0, 0, w, h).data;
+
+  let r = 0,
+    g = 0,
+    b = 0,
+    count = 0;
+  for (let i = 0; i < data.length; i += 4) {
+    const alpha = data[i + 3];
+    if (alpha < 125) continue;
+    r += data[i];
+    g += data[i + 1];
+    b += data[i + 2];
+    count++;
+  }
+
+  if (count === 0) return [60, 60, 60];
+  return [Math.round(r / count), Math.round(g / count), Math.round(b / count)];
+}
+
+albumImage.addEventListener("load", function () {
+  try {
+    const [r, g, b] = getAverageColor(albumImage);
+    const gradient = `linear-gradient(to bottom, rgb(${r},${g},${b}) 0%, rgb(${r},${g},${b}) 25%, #000 40%)`;
+
+    document.body.style.background = gradient;
+    console.log("Colore medio:", r, g, b);
+  } catch (err) {
+    console.warn("Impossibile leggere il colore medio:", err);
+  }
+});
