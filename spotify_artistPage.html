@@ -18,106 +18,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="navbar.css" />
-    <style>
-      .sidebar {
-        background-color: #000000;
-        height: 100vh;
-        padding: 20px 15px;
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 250px;
-        overflow-y: auto;
-      }
-
-      .sidebar a {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        color: #b3b3b3;
-        text-decoration: none;
-        padding: 8px 0;
-        font-size: 15px;
-      }
-
-      .sidebar a:hover {
-        color: white;
-      }
-
-      .sidebar .section-title {
-        margin-top: 25px;
-        font-size: 13px;
-        text-transform: uppercase;
-        color: #888;
-      }
-
-      /*NAVBAR*/
-      .topbar {
-        position: sticky;
-        top: 0;
-        background-color: #121212;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-        z-index: 10;
-      }
-
-      .topbar i {
-        position: sticky;
-        top: 0;
-        background-color: #121212;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-        z-index: 10;
-        border-bottom: 1px solid #222;
-      }
-
-      .main-content {
-        margin-left: 250px;
-        padding: 20px;
-        height: 100vh;
-        overflow-y: auto;
-      }
-
-      /* classi per arrotondare le immagini */
-      .rounded-top-left {
-        border-top-left-radius: 0.5rem;
-      }
-
-      .rounded-bottom-left {
-        border-bottom-left-radius: 0.5rem;
-      }
-      .artistHeader {
-        background-image: url(assets/main/image-3.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-      }
-      .album-cover {
-        width: 3.5vw;
-        height: 3.5vw;
-        object-fit: cover;
-      }
-      .imgPiacciono {
-        width: 100%;
-        height: auto;
-        max-width: 100px;
-        min-width: 50px;
-
-        border-radius: 50%;
-      }
-      #nomeArtista {
-        font-size: clamp(3rem, 8vw, 6.5rem);
-      }
-      .playerPrincipale {
-        background-color: rgb(30, 215, 96);
-      }
-    </style>
+    <link rel="stylesheet" href="style/artist.css" />
   </head>
 
   <body class="text-white bg-black">
@@ -151,8 +52,8 @@
                 <i
                   style="color: rgb(115, 157, 247)"
                   class="fa-solid fa-circle-check"
-                ></i
-                >Artista Verificato
+                ></i>
+                Artista Verificato
               </h3>
               <h1 class="text-uppercase ps-2 mb-0" id="nomeArtista">
                 NomeArtista
@@ -197,19 +98,21 @@
                   </div>
                   <div class="col col-8 ms-2">
                     <h5 class="fs-5">Hai messo mi piace a 11 brani</h5>
-                    <p class="fs-6">di <span>nome artista</span></p>
+                    <p class="diNomeArtista fs-6">
+                      di <span>nome artista</span>
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-            <p class="mt-4">VISUALIZZA ALTRO</p>
+            <p class="visAltro mt-4">VISUALIZZA ALTRO</p>
           </div>
 
           <h4 class="mt-4">Discografia</h4>
 
           <h5 class="mt-3">Uscite popolari</h5>
           <!--Prima sezione Album-->
-          <div class="row albumPopolari mt-3">
+          <div class="row albumPopolari mt-3 flex-row d-none d-md-flex">
             <div class="col col-md-4 contenitoreAlbum">
               <div class="card" style="background-color: #000000; color: white">
                 <img
@@ -219,7 +122,7 @@
                 />
                 <div class="card-body p-0 pt-1">
                   <h5 class="card-title">Nome Albun</h5>
-                  <p class="card-text">2025-album</p>
+                  <p class="card-text annoAlbum">2025-album</p>
                 </div>
               </div>
             </div>
@@ -232,7 +135,7 @@
                 />
                 <div class="card-body p-0 pt-1">
                   <h5 class="card-title">Nome Albun</h5>
-                  <p class="card-text">2025-album</p>
+                  <p class="card-text annoAlbum">2025-album</p>
                 </div>
               </div>
             </div>
@@ -245,13 +148,83 @@
                 />
                 <div class="card-body p-0 pt-1">
                   <h5 class="card-title">Nome Albun</h5>
-                  <p class="card-text">2025-album</p>
+                  <p class="card-text annoAlbum">2025-album</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row albumPopolariMobile mt-3 d-md-none">
+            <div class="col col-12">
+              <div
+                class="card cardAlbumMobile mb-3 j"
+                style="max-height: 150px"
+              >
+                <div class="row g-0">
+                  <div class="col-4">
+                    <img
+                      src="assets/main/image-15.jpg"
+                      class="img-fluid immagineAlbumMobile"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Nome Album</h5>
+                      <p class="card-text">2025-Album</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-12">
+              <div
+                class="card cardAlbumMobile mb-3 j"
+                style="max-height: 150px"
+              >
+                <div class="row g-0">
+                  <div class="col-4">
+                    <img
+                      src="assets/main/image-15.jpg"
+                      class="img-fluid immagineAlbumMobile"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Nome Album</h5>
+                      <p class="card-text">2025-Album</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col col-12">
+              <div
+                class="card cardAlbumMobile mb-3 j"
+                style="max-height: 150px"
+              >
+                <div class="row g-0">
+                  <div class="col-4">
+                    <img
+                      src="assets/main/image-15.jpg"
+                      class="img-fluid immagineAlbumMobile"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Nome Album</h5>
+                      <p class="card-text">2025-Album</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <!--seconda sezione album-->
+
           <h5 class="mt-4 mb-4">Nuove uscite</h5>
           <div class="row albumNuovi mt-3">
             <div class="col col-lg-4 contenitoreAlbum">
@@ -263,7 +236,7 @@
                 />
                 <div class="card-body p-0 pt-1">
                   <h5 class="card-title">Nome Albun</h5>
-                  <p class="card-text">2025-album</p>
+                  <p class="card-text annoAlbum">2025-album</p>
                 </div>
               </div>
             </div>
@@ -276,7 +249,7 @@
                 />
                 <div class="card-body p-0 pt-1">
                   <h5 class="card-title">Nome Albun</h5>
-                  <p class="card-text">2025-album</p>
+                  <p class="card-text annoAlbum">2025-album</p>
                 </div>
               </div>
             </div>
@@ -289,7 +262,7 @@
                 />
                 <div class="card-body p-0 pt-1">
                   <h5 class="card-title">Nome Albun</h5>
-                  <p class="card-text">2025-album</p>
+                  <p class="card-text annoAlbum">2025-album</p>
                 </div>
               </div>
             </div>

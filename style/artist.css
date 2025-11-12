@@ -1,0 +1,130 @@
+.sidebar {
+  background-color: #000000;
+  height: 100vh;
+  padding: 20px 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  overflow-y: auto;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b3b3b3;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 15px;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+.sidebar .section-title {
+  margin-top: 25px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/*NAVBAR*/
+.topbar {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  z-index: 10;
+}
+
+.topbar i {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  z-index: 10;
+  border-bottom: 1px solid #222;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* classi per arrotondare le immagini */
+.rounded-top-left {
+  border-top-left-radius: 0.5rem;
+}
+
+.rounded-bottom-left {
+  border-bottom-left-radius: 0.5rem;
+}
+.artistHeader {
+  background-image: url(assets/main/image-3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.album-cover {
+  width: 3.5vw;
+  height: 3.5vw;
+  object-fit: cover;
+}
+.imgPiacciono {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  min-width: 50px;
+
+  border-radius: 50%;
+}
+#nomeArtista {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+}
+.playerPrincipale {
+  background-color: rgb(30, 215, 96);
+}
+.ascoltatoriTotali {
+  color: #8c8c8c;
+}
+
+.durataCanzone {
+  color: #8c8c8c;
+}
+#nomeArtista {
+  font-style: italic;
+}
+#ascoltatoriMensili {
+  color: #bbb9b9;
+}
+.visAltro {
+  color: #8c8c8c;
+}
+.diNomeArtista {
+  color: #8c8c8c;
+}
+.annoAlbum {
+  color: #8c8c8c;
+}
+.immagineAlbumMobile {
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+  min-width: 50px;
+}
+.cardAlbumMobile {
+  background-color: #000000;
+  color: white;
+}
