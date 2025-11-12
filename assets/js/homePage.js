@@ -46,6 +46,10 @@ const finder = function (parameter) {
         const titleShort = song.title_short;
         const artist = song.artist.name;
         const duration = song.duration;
+        const minutes = Math.floor(duration / 60);
+        const seconds = String(duration % 60).padStart(2, "0");
+
+        const songImg = song.album.cover_medium;
         const resultN = i + 1;
         cardContainer.innerHTML += `
 =======
