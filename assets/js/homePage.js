@@ -33,7 +33,6 @@ const search = function () {
 search();
 // function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
-<<<<<<< Updated upstream
   fetch(endpoint + parameter)
     .then((res) => {
       if (res.ok) {
