@@ -73,6 +73,7 @@ const getArtist = function () {
                 <div class="d-flex">
                 <p class="px-3 ascoltatoriTotali">${rank}</p>
                 <p class="px-3 durataCanzone">${minutes}:${seconds}</p>
+                <i class="fa-solid fa-heart favorite-icon ms-2"></i>
                 </div>
                 </div>
           `;
@@ -89,3 +90,14 @@ const getArtist = function () {
 };
 
 getArtist();
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("favorite-icon")) {
+    if (event.target.classList.contains("active")) {
+      event.target.classList.remove("active");
+      event.target.style.color = "#b3b3b3";
+    } else {
+      event.target.classList.add("active");
+      event.target.style.color = "#1db954";
+    }
+  }
+});

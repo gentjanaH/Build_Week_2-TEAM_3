@@ -241,3 +241,19 @@
 .track-index {
   color: #b3b3b3;
 }
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+.icon-btn.active i {
+  color: #1db954;
+}
