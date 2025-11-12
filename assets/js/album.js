@@ -88,3 +88,17 @@ const getData = () => {
 };
 
 getData();
+const heartBtn = document.getElementById("album-heart");
+const heartIcon = heartBtn.querySelector("i");
+
+heartBtn.addEventListener("click", () => {
+  heartBtn.classList.toggle("active");
+
+  if (heartBtn.classList.contains("active")) {
+    heartIcon.classList.remove("fa-regular");
+    heartIcon.classList.add("fa-solid");
+  } else {
+    heartIcon.classList.remove("fa-solid");
+    heartIcon.classList.add("fa-regular");
+  }
+});
