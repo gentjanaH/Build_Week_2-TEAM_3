@@ -117,6 +117,21 @@
       .playerPrincipale {
         background-color: rgb(30, 215, 96);
       }
+      favorite-icon {
+        color: #1db954;
+        font-size: 18px;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .track-row:hover .favorite-icon {
+        opacity: 1;
+      }
+
+      .favorite-icon:hover {
+        transform: scale(1.1);
+      }
     </style>
   </head>
 
