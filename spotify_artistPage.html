@@ -106,8 +106,16 @@
       .imgPiacciono {
         width: 100%;
         height: auto;
+        max-width: 100px;
+        min-width: 50px;
 
         border-radius: 50%;
+      }
+      #nomeArtista {
+        font-size: clamp(3rem, 8vw, 6.5rem);
+      }
+      .playerPrincipale {
+        background-color: rgb(30, 215, 96);
       }
     </style>
   </head>
@@ -138,16 +146,18 @@
             class="d-flex flex-column justify-content-end align-items-start artistHeader"
             style="height: 35vh"
           >
-            <div class="container" id="artistHead">
-              <h3>
+            <div class="container m-0" id="artistHead">
+              <h3 class="fs-5 mb-0">
                 <i
                   style="color: rgb(115, 157, 247)"
                   class="fa-solid fa-circle-check"
                 ></i
                 >Artista Verificato
               </h3>
-              <h1 class="text-uppercase ps-2" id="nomeArtista">NomeArtista</h1>
-              <h4 id="ascoltatoriMensili" class="mt-1">
+              <h1 class="text-uppercase ps-2 mb-0" id="nomeArtista">
+                NomeArtista
+              </h1>
+              <h4 id="ascoltatoriMensili" class="mt-1 fs-6">
                 <span id="numeroAscoltatori "></span>ascoltatori mensili
               </h4>
             </div>
@@ -155,28 +165,28 @@
           <!--Pulsanti-->
           <div class="d-flex align-items-center mb-4 mt-4">
             <button
-              class="btn btn-success rounded-circle d-flex justify-content-center align-items-center me-3"
+              class="btn playerPrincipale rounded-circle d-flex justify-content-center align-items-center me-3"
               style="width: 56px; height: 56px"
             >
-              <i class="fa-solid fa-play fs-4"></i>
+              <i class="fa-solid fa-play fs-5"></i>
             </button>
             <button class="btn btn-outline-light px-3 me-2">FOLLOWING</button>
-            <button class="btn btn-outline-light border-0 fs-4">⋯</button>
+            <button class="btn btn-outline-light border-0 fs-5">⋯</button>
           </div>
 
           <!--Brani popolari e mi piace-->
           <div class="container-fuid">
             <div class="row">
               <!--inizio canzone-->
-              <div class="braniPopolari col col-12 col-lg-8 mt-2">
+              <div class="braniPopolari col col-12 col-md-7 col-lg-8 mt-2">
                 <h4>Popolari</h4>
                 <div id="containerTracks"></div>
                 <div id="brano" class="brano mt-3"></div>
 
                 <!--fine canzone-->
               </div>
-              <div id="braniPiacciono" class="col col-lg-4 mt-2">
-                <h4>Brani che ti Piacciono</h4>
+              <div id="braniPiacciono" class="col col-md-5 col-lg-4 mt-2">
+                <h4 class="fs-5">Brani che ti Piacciono</h4>
                 <div class="piaccionoFotoTesto row mt-3">
                   <div class="col col-3">
                     <img
@@ -186,8 +196,8 @@
                     />
                   </div>
                   <div class="col col-8 ms-2">
-                    <h5>Hai messo mi piace a 11 brani</h5>
-                    <p>di <span>nome artista</span></p>
+                    <h5 class="fs-5">Hai messo mi piace a 11 brani</h5>
+                    <p class="fs-6">di <span>nome artista</span></p>
                   </div>
                 </div>
               </div>
@@ -198,9 +208,9 @@
           <h4 class="mt-4">Discografia</h4>
 
           <h5 class="mt-3">Uscite popolari</h5>
-
+          <!--Prima sezione Album-->
           <div class="row albumPopolari mt-3">
-            <div class="col col-lg-4 contenitoreAlbum">
+            <div class="col col-md-4 contenitoreAlbum">
               <div class="card" style="background-color: #000000; color: white">
                 <img
                   src="assets/main/image-11.jpg"
@@ -213,7 +223,7 @@
                 </div>
               </div>
             </div>
-            <div class="col col-lg-4 contenitoreAlbum">
+            <div class="col col-md-4 contenitoreAlbum">
               <div class="card" style="background-color: #000000; color: white">
                 <img
                   src="assets/main/image-11.jpg"
@@ -226,7 +236,7 @@
                 </div>
               </div>
             </div>
-            <div class="col col-lg-4 contenitoreAlbum">
+            <div class="col col-md-4 contenitoreAlbum">
               <div class="card" style="background-color: #000000; color: white">
                 <img
                   src="assets/main/image-11.jpg"
