@@ -1,17 +1,17 @@
 //funzione nascondi elementi
 const hideSection = function (e) {
-  console.log("sezione nascosta", e);
+    console.log("sezione nascosta", e);
 
-  const section = document.getElementById("carouselExampleAutoplaying");
-  const button = e.target;
+    const section = document.getElementById("carouselExampleAutoplaying");
+    const button = e.target;
 
-  if (section.classList.contains("d-none")) {
-    section.classList.remove("d-none");
-    button.innerText = "Nascondi annunci";
-  } else {
-    section.classList.add("d-none");
-    button.innerText = "Mostra novità";
-  }
+    if (section.classList.contains("d-none")) {
+        section.classList.remove("d-none");
+        button.innerText = "Nascondi annunci";
+    } else {
+        section.classList.add("d-none");
+        button.innerText = "Mostra novità";
+    }
 };
 const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const input = document.getElementById("searchInput");
@@ -22,17 +22,18 @@ const allColCards = cardContainer.getElementsByClassName("col");
 // funzione per mostrare il campo di ricerca
 const searchSide = document.getElementById("toggleSearch");
 const search = function () {
-  searchSide.addEventListener("click", function (e) {
-    e.preventDefault();
-    input.classList.toggle("d-none");
-    if (!input.classList.contains("d-none")) {
-      input.focus();
-    }
-  });
+    searchSide.addEventListener("click", function (e) {
+        e.preventDefault();
+        input.classList.toggle("d-none");
+        if (!input.classList.contains("d-none")) {
+            input.focus();
+        }
+    });
 };
 search();
 // function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
+<<<<<<< Updated upstream
   fetch(endpoint + parameter)
     .then((res) => {
       if (res.ok) {
@@ -47,6 +48,22 @@ const finder = function (parameter) {
         const duration = song.duration;
         const resultN = i + 1;
         cardContainer.innerHTML += `
+=======
+    fetch(endpoint + parameter)
+        .then((res) => {
+            if (res.ok) {
+                return res.json();
+            } else throw new Error(res.status);
+        })
+        .then((results) => {
+            cardContainer.innerHTML = ""
+            results.data.forEach((song, i) => {
+                const titleShort = song.title_short;
+                const artist = song.artist.name;
+                const duration = song.duration;
+                const resultN = i + 1;
+                cardContainer.innerHTML += `
+>>>>>>> Stashed changes
         <div class="col">
                     <div class="card my-3 rounded-start text-bg-dark border-0">
                       <div class="row">
@@ -93,13 +110,14 @@ const finder = function (parameter) {
                     </div>
                   </div>
         `;
-      });
-    })
-    .catch((err) => {
-      console.log("Errore " + err);
-    });
+            });
+        })
+        .catch((err) => {
+            console.log("Errore " + err);
+        });
 };
 
+<<<<<<< Updated upstream
 let parameter;
 input.addEventListener("input", (event) => {
   console.log("Input event:", event.target.value);
@@ -116,4 +134,19 @@ input.addEventListener("input", (event) => {
     }
   }
   finder(parameter);
+=======
+
+
+input.addEventListener("input", (event) => {
+    console.log("Input event:", event.target.value);
+    parameter = event.target.value;
+    console.log(parameter);
+    if (parameter.length >= 1) {
+        finder(parameter);
+    } else {
+        cardContainer.innerHTML = ``;
+
+    }
+
+>>>>>>> Stashed changes
 });
