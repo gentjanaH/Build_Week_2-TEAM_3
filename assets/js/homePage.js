@@ -31,6 +31,7 @@ const search = function () {
   });
 };
 search();
+// function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
   fetch(endpoint + parameter)
     .then((res) => {
@@ -39,6 +40,7 @@ const finder = function (parameter) {
       } else throw new Error(res.status);
     })
     .then((results) => {
+      cardContainer.innerHTML = ``;
       results.data.forEach((song, i) => {
         const titleShort = song.title_short;
         const artist = song.artist.name;
@@ -97,21 +99,21 @@ const finder = function (parameter) {
       console.log("Errore " + err);
     });
 };
-const hideCards = (par) => {
-  for (let i = 0; i < allColCards.length; i++) {
-    allColCards[i].classList.toggle("d-none");
-  }
-};
+
 let parameter;
 input.addEventListener("input", (event) => {
   console.log("Input event:", event.target.value);
   parameter = event.target.value;
   console.log(parameter);
   if (parameter.length >= 1) {
-    hideCards();
+    for (let i = 0; i < allColCards.length; i++) {
+      allColCards[i].classList.add("d-none");
+    }
   } else {
-    cardContainer.innerHTML = ``;
-    hideCards();
+    // cardContainer.innerHTML = ``;
+    for (let i = 0; i < allColCards.length; i++) {
+      allColCards[i].classList.remove("d-none");
+    }
   }
   finder(parameter);
 });
