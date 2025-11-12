@@ -82,7 +82,7 @@ const finder = function (parameter) {
     });
 };
 
-<<<<<<< Updated upstream
+
 let parameter;
 input.addEventListener("input", (event) => {
   console.log("Input event:", event.target.value);
@@ -99,24 +99,18 @@ input.addEventListener("input", (event) => {
       allColCards[i].classList.remove("d-none");
     }
   }
-<<<<<<< HEAD
-  finder(parameter);
-=======
 
 
-input.addEventListener("input", (event) => {
-    console.log("Input event:", event.target.value);
-    parameter = event.target.value;
-    console.log(parameter);
-    if (parameter.length >= 1) {
-        finder(parameter);
-    } else {
-        cardContainer.innerHTML = ``;
 
-    }
+  // input.addEventListener("input", (event) => {
+  //     console.log("Input event:", event.target.value);
+  //     parameter = event.target.value;
+  //     console.log(parameter);
+  //     if (parameter.length >= 1) {
+  //         finder(parameter);
+  //     } else {
+  //         cardContainer.innerHTML = ``;
 
->>>>>>> Stashed changes
-=======
-  //   finder(parameter);
->>>>>>> main
-});
+  //     }
+
+})
