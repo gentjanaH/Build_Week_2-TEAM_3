@@ -62,17 +62,32 @@
           </section>
 
           <!-- CONTROLLI -->
-          <section class="p-4 d-flex align-items-center">
-            <button class="btn play-btn rounded-circle me-4">
+
+          <section class="p-4 d-flex align-items-center gap-3">
+            <button
+              class="btn play-btn rounded-circle d-flex align-items-center justify-content-center"
+            >
               <i class="fa-solid fa-play"></i>
             </button>
 
-            <button id="album-heart" class="icon-btn me-4">
-              <i class="fa-regular fa-heart fs-4"></i>
+            <button
+              id="album-heart"
+              type="button"
+              class="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center"
+              aria-label="Aggiungi ai preferiti"
+              style="width: 40px; height: 40px"
+            >
+              <i class="fa-regular fa-heart"></i>
             </button>
 
-            <button id="album-menu" class="icon-btn">
-              <i class="fa-solid fa-ellipsis fs-4"></i>
+            <button
+              id="album-menu"
+              type="button"
+              class="btn btn-outline-light rounded-circle p-0 d-flex align-items-center justify-content-center"
+              aria-label="Menu traccia"
+              style="width: 40px; height: 40px"
+            >
+              <i class="fa-solid fa-ellipsis"></i>
             </button>
           </section>
 
@@ -89,8 +104,31 @@
               ></span>
             </div>
 
-            <!-- SONG ROW -->
-            <div id="track-list"></div>
+            <div id="track-list">
+              <div class="card bg-black border-0 text-white mb-2 track-row">
+                <div class="card-body d-flex align-items-center p-2">
+                  <span class="me-3 text-secondary">1</span>
+                  <img
+                    src="https://via.placeholder.com/50"
+                    alt="album-cover"
+                    class="img-fluid rounded me-3"
+                    style="width: 50px; height: 50px"
+                  />
+
+                  <div class="flex-grow-1">
+                    <h6 class="m-0">Nome Canzone</h6>
+                    <small class="text-secondary">Nome Artista</small>
+                  </div>
+
+                  <div class="d-none d-md-block text-center me-4">
+                    <small class="text-secondary">5.430.210</small>
+                  </div>
+
+                  <i class="fa-regular fa-heart me-4 fs-5 text-secondary"></i>
+                  <span class="text-secondary">3:24</span>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
 
