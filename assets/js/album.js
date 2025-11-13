@@ -1,6 +1,9 @@
 //API URL
-const apiUrl =
-  "https://striveschool-api.herokuapp.com/api/deezer/album/75621062";
+const apiUrl = "https://striveschool-api.herokuapp.com/api/deezer/album/";
+
+const url = window.location.search;
+const urlId = new URLSearchParams(url);
+const artistId = urlId.get("id");
 
 //ELEMENTI DOM
 const albumImage = document.getElementById("album-image");
@@ -59,7 +62,7 @@ const albumTracks = (albumObj) => {
 };
 //FETCH API
 const getData = () => {
-  fetch(apiUrl)
+  fetch(apiUrl + artistId)
     .then((response) => {
       if (response.ok) {
         console.log(`Response ok ${response.status}`);

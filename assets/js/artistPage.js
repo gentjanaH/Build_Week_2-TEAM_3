@@ -104,7 +104,7 @@ const getArtist = function () {
                   alt="immagine-${albumName}"
                 />
                 <div class="card-body sffondoCardAlbum p-0 pt-1">
-                  <h5 class="card-title">${albumName}</h5>
+                  <a href="/spotify_albumPage.html?id=${albumId}" class="card-title">${albumName}</a>
                 </div>
               </div>
             </div>`;
@@ -127,7 +127,7 @@ const getArtist = function () {
                   </div>
                   <div class="col-8">
                     <div class="card-body sfondoCardAlbum">
-                      <h5 class="card-title">${albumName}</h5>
+                      <a href="/spotify_albumPage.html?id=${albumId} "class="card-title">${albumName}</a>
                     </div>
                   </div>
                 </div>
