@@ -94,3 +94,26 @@
 #spotify-bar-bottom {
   height: 60px;
 }
+
+/* colonna di destra SEZIONE AMICI */
+#sezione-amici span {
+  font-size: 12px;
+}
+
+#sezione-amici p {
+  font-size: 16px;
+}
+
+/* sezione "altro di cio che ti piace" */
+#sezione-altro p:first-of-type {
+  font-size: 10px;
+}
+
+.colonnaCentraleDesktop {
+  background: linear-gradient(to bottom,
+      #2b2b2b 0%,
+      #1a1a1a 20%,
+      #0f0f0f 35%,
+      #1a1a1a 60%,
+      #1e1e1e 100%);
+}

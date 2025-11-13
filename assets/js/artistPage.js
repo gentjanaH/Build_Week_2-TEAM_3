@@ -61,18 +61,18 @@ const getArtist = function () {
           // MANIPOLAZIONE e TRAVERSING DOM:
           const brano = document.getElementById("brano");
           brano.innerHTML += `<div class="d-flex justify-content-start align-items-center my-2">
-            <p class="pe-3 trackNumber">${trackNumber}</p>
-            <div class="immagineCanzone px-3">
+            <p class="px-1 pe-lg-3 trackNumber">${trackNumber}</p>
+            <div class="immagineCanzone p-3 px-md-3">
               <img
                 src="${trackThumbnail}"
                 class="album-cover"
                 alt="image-album-${title}"
               />
               </div>
-                <p class="px-3 titoloCanzone flex-grow-1">${title}</p>
+                <p class="px-1 px-md-3 titoloCanzone flex-grow-1">${title}</p>
                 <div class="d-flex">
-                <p class="px-3 ascoltatoriTotali">${rank}</p>
-                <p class="px-3 durataCanzone">${minutes}:${seconds}</p>
+                <p class="px-1 px-md-3 ascoltatoriTotali">${rank}</p>
+                <p class="px-1 px-md-3 durataCanzone">${minutes}:${seconds}</p>
                 <i class="fa-solid fa-heart favorite-icon ms-2"></i>
                 </div>
                 </div>

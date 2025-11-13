@@ -13,24 +13,32 @@ const hideSection = function (e) {
     button.innerText = "Mostra novità";
   }
 };
+
 const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const input = document.getElementById("searchInput");
 // const inputValue = input.value;
 // console.log(inputValue);
 const cardContainer = document.getElementById("cardContainer");
 const allColCards = cardContainer.getElementsByClassName("col");
+
 // funzione per mostrare il campo di ricerca
-const searchSide = document.getElementById("toggleSearch");
+const searchSide = document.getElementsByClassName("toggleSearch");
 const search = function () {
-  searchSide.addEventListener("click", function (e) {
-    e.preventDefault();
-    input.classList.toggle("d-none");
-    if (!input.classList.contains("d-none")) {
-      input.focus();
-    }
-  });
+  for (let i = 0; i < searchSide.length; i++) {
+    searchSide[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      input.classList.toggle("d-none");
+      if (!input.classList.contains("d-none")) {
+        input.focus();
+      }
+    });
+
+  }
+
+
 };
 search();
+
 // function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
   fetch(endpoint + parameter)
@@ -57,7 +65,7 @@ const finder = function (parameter) {
                         <div class="col-5 p-0">
                             <img
                                 src="${songImg}"
-                                class="img-fluid object-fit-cover rounded-start w-100 h-100"
+                                class="img-fluid object-fit-cover rounded-start h-100 w-100"
                                 alt="image of ${titleShort}'s album"
                             />
                         </div>
@@ -65,10 +73,10 @@ const finder = function (parameter) {
                         <div class="col-7">
                           <div class="card-body d-flex flex-column justify-content-between h-100 w-100">
                           <div>
-                            <h5 class="card-title">${titleShort}</h5>
+                            <h6 class="card-title">${titleShort}</h6>
                             <p>${artist}</p>
                             </div>
-                          <p>Durata: ${minutes}:${seconds}</p>
+                          <p style="font-size:12px;">Durata: ${minutes}:${seconds}</p>
                           </div>
                         </div>
                       </div>
@@ -81,6 +89,7 @@ const finder = function (parameter) {
       console.log("Errore " + err);
     });
 };
+
 
 let parameter;
 input.addEventListener("input", (event) => {
@@ -98,5 +107,82 @@ input.addEventListener("input", (event) => {
       allColCards[i].classList.remove("d-none");
     }
   }
-  //   finder(parameter);
+  finder(parameter);
+});
+
+//Generazione random di artisti in home
+const artistList = [
+  "Eminem",
+  "Geolier",
+  "Fantasm",
+  "Adele",
+  "Coldplay",
+  "Rihanna",
+  "Pupo",
+  "Shiva",
+  "Ultimo",
+  "OneRepublic",
+];
+
+const likedCont = document.getElementById("test");
+
+const likedArtist = () => {
+  const randomArtist =
+    artistList[Math.floor(Math.random() * artistList.length)];
+  fetch(endpoint + randomArtist)
+    .then((response) => {
+      if (response.ok) {
+        console.log(`Il server è collegato correttamente ${response}`);
+        return response.json();
+      } else {
+        throw new Error(`Il server non risponde ${response.status}`);
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      likedCont.innerHTML = ``;
+      data.data.forEach((artist, i) => {
+        const artistName = artist.artist.name;
+        const artistPicture = artist.artist.picture_medium;
+
+        if (i < 4) {
+          likedCont.innerHTML += `
+                          <div class="col col-md-4 col-lg-3">
+                    <!-- card da aggiungere -->
+                    <div class="card text-bg-dark">
+                      <img
+                        src="${artistPicture}"
+                        class="card-img-top img-thumbnail"
+                        alt="img-07"
+                        alt="${artistName} foto"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">${artistName}</h5>
+                        <p class="card-text">
+                          Some quick example text to build on the card title and
+                          make up the bulk of the card’s content.
+                        </p>
+                      </div>
+                    </div>
+                  </div>`;
+          i++;
+        }
+      });
+    })
+    .catch((error) => {
+      console.log(`Errore del server ${error}`);
+    });
+};
+likedArtist();
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("favorite-icon")) {
+    if (event.target.classList.contains("active")) {
+      event.target.classList.remove("active");
+      event.target.style.color = "#b3b3b3";
+    } else {
+      event.target.classList.add("active");
+      event.target.style.color = "#1db954";
+    }
+  }
 });
