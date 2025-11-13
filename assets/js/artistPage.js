@@ -42,7 +42,7 @@ const getArtist = function () {
       numFan.innerHTML = fan + " ascoltatori mensili";
       const artistHeader = document.getElementById("artistHeader");
       artistHeader.style.backgroundImage = `url(${coverImgDesktop})`;
-      artistHeader.style.backgroundPosition = "0% 25%";
+      artistHeader.style.backgroundPosition = "0% 50%";
       // FINE MANIPOLAZIONE DOM
       return getTrackList(tracklist);
     })
@@ -72,10 +72,10 @@ const getArtist = function () {
                 alt="image-album-${title}"
               />
               </div>
-                <a href="/spotify_albumPage.html?id=${trackId}" class="px-1 px-md-3 titoloCanzone flex-grow-1">${title}</a>
+                <a href="/spotify_albumPage.html?id=${trackId}" class="px-1 px-md-3 titoloCanzone flex-grow-1 text-decoration-none text-white">${title}</a>
                 <div class="d-flex">
-                <p class="px-1 px-md-3 ascoltatoriTotali">${rank}</p>
-                <p class="px-1 px-md-3 durataCanzone">${minutes}:${seconds}</p>
+                <p class="px-1 px-md-3 ascoltatoriTotali text-white">${rank}</p>
+                <p class="px-1 px-md-3 durataCanzone text-white">${minutes}:${seconds}</p>
                 <i class="fa-solid fa-heart favorite-icon ms-2"></i>
                 </div>
                 </div>
@@ -104,7 +104,7 @@ const getArtist = function () {
                   alt="immagine-${albumName}"
                 />
                 <div class="card-body sffondoCardAlbum p-0 pt-1">
-                  <a href="/spotify_albumPage.html?id=${albumId}" class="card-title">${albumName}</a>
+                  <a href="/spotify_albumPage.html?id=${albumId}" class="text-decoration-none text-white"><h5 class="card-title">${albumName}</h5></a>
                 </div>
               </div>
             </div>`;

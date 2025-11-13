@@ -73,8 +73,8 @@ const finder = function (parameter) {
                         <div class="col-7">
                           <div class="card-body d-flex flex-column justify-content-between h-100 w-100">
                           <div>
-                            <a href="/spotify_albumPage.html?id=${albumId}" class="card-title">${titleShort}</h6>
-                            <a href="./spotify_artistPage.html?id=${artistId}"><p>${artist}</p></a>
+                            <a href="/spotify_albumPage.html?id=${albumId}" class="card-title text-decoration-none text-white">${titleShort}</h6>
+                            <a href="./spotify_artistPage.html?id=${artistId}" class="text-decoration-none text-white" ><p>${artist}</p></a>
                             </div>
                           <p style="font-size:12px;">Durata: ${minutes}:${seconds}</p>
                           </div>
@@ -143,24 +143,21 @@ const likedArtist = () => {
       data.data.forEach((artist, i) => {
         const artistName = artist.artist.name;
         const artistPicture = artist.artist.picture_medium;
+        const artistId = artist.artist.id;
 
         if (i < 4) {
           likedCont.innerHTML += `
-                          <div class="col col-md-4 col-lg-3">
+                  <div class="col col-md-4 col-lg-3">
                     <!-- card da aggiungere -->
                     <div class="card text-bg-dark">
                       <img
                         src="${artistPicture}"
-                        class="card-img-top img-thumbnail"
+                        class="card-img-top img-thumbnail h-75"
                         alt="img-07"
                         alt="${artistName} foto"
                       />
                       <div class="card-body">
-                        <h5 class="card-title">${artistName}</h5>
-                        <p class="card-text">
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card’s content.
-                        </p>
+                        <a href="./spotify_artistPage.html?id=${artistId}"class="text-decoration-none text-white"><h5 class="card-title">${artistName}</h5></a>
                       </div>
                     </div>
                   </div>`;

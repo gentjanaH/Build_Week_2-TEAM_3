@@ -1,4 +1,4 @@
-.sidebar {
+/* .sidebar {
   background-color: #000000;
   height: 100vh;
   padding: 20px 15px;
@@ -7,7 +7,7 @@
   top: 0;
   width: 250px;
   overflow-y: auto;
-}
+} */
 
 .sidebar a {
   display: flex;
