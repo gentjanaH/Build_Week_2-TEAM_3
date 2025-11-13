@@ -13,7 +13,16 @@ const trackContainer = document.getElementById("track-list");
 
 //CLASSE OGGETTI DA PRELEVARE IN API
 class artistData {
-  constructor(title, cover, name, release_date, nb_tracks, duration, tracks) {
+  constructor(
+    title,
+    cover,
+    name,
+    release_date,
+    nb_tracks,
+    duration,
+    tracks,
+    artist
+  ) {
     this.title = title;
     this.cover = cover;
     this.name = name;
@@ -21,6 +30,7 @@ class artistData {
     this.nb_tracks = nb_tracks;
     this.duration = duration;
     this.tracks = tracks;
+    this.artist = artist;
   }
 }
 //FUNZIONE PER LA GENERAZIONE DEL HEADER DEL ALBUM
@@ -50,7 +60,9 @@ const albumTracks = (albumObj) => {
 
               <div class="track-title-block">
                 <span class="track-title">${track.title}</span>
-                <span class="track-artist">${track.artist.name}</span>
+                <a href="/spotify_artistPage.html?id=${
+                  track.artist.id
+                }" class="track-artist">${track.artist.name}</a>
               </div>
 
               <span class="track-plays">${track.rank.toLocaleString()}</span>
