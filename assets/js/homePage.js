@@ -52,6 +52,7 @@ const finder = function (parameter) {
         const artist = song.artist.name;
         const artistId = song.artist.id;
         const duration = song.duration;
+        const albumId = song.album.id;
         const minutes = Math.floor(duration / 60);
         const seconds = String(duration % 60).padStart(2, "0");
 
@@ -72,8 +73,8 @@ const finder = function (parameter) {
                         <div class="col-7">
                           <div class="card-body d-flex flex-column justify-content-between h-100 w-100">
                           <div>
-                            <h6 class="card-title">${titleShort}</h6>
-                            <a class="text-white text-decoration-none" href="./spotify_artistPage.html?id=${artistId}"><p>${artist}</p></a>
+                            <a href="/spotify_albumPage.html?id=${albumId}" class="card-title">${titleShort}</h6>
+                            <a href="./spotify_artistPage.html?id=${artistId}"><p>${artist}</p></a>
                             </div>
                           <p style="font-size:12px;">Durata: ${minutes}:${seconds}</p>
                           </div>
