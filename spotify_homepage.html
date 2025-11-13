@@ -175,28 +175,41 @@
                       data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                  <!-- fine carosello -->
-                </div>
-                <!-- fine sezione annunci -->
-                <div class="col col-12 d-flex justify-content-around my-3">
-                  <h3 class="flex-grow-1">Buonasera</h3>
-                  <div> <!-- campo input nascosto -->
-                    <input type="search" id="searchInput" class=" form-control d-none w-auto bg-dark text-light"
-                      placeholder="Cerca brani..." />
-                  </div>
-                  <div class="d-flex justify-content-end flex-grow-1 align-items-center">
-                    <a><i class="fa-solid fa-bell me-2"></i></a>
-                    <a><i class="fa-regular fa-clock me-2"></i></a>
-                    <a> <i class="fa-solid fa-gear"></i></a>
-                  </div>
-                </div>
-                <div class="col col-12 d-md-none my-3">
-                  <a class="btn btn-dark rounded-pill me-3">Musica</a>
-                  <a class="btn btn-dark rounded-pill">Podcast e Show</a>
-                </div>
-              </div>
+                      <!-- colonna centrale -->
+                      <div class="col col-12 colonnaCentraleDesktop col-lg-7">
+                        <main>
+                          <div>
+                            <section class="container">
+                              <div class="row">
+                                <!-- sezione annunci -->
+                                <div class="col d-none d-lg-block col-lg-12">
+                                  <!-- inizio carosello -->
+                                  <button onclick="hideSection(event)"
+                                    class="bnt bg-transparent border-0 text-light fw-light" style="font-size: 12px">
+                                    Nascondi annunci
+                                  </button>
+                                </div>
+                                <!-- fine carosello -->
+                              </div>
+                              <!-- fine sezione annunci -->
+                              <div class="col col-12 d-flex justify-content-around my-3">
+                                <h3 class="flex-grow-1">Buonasera</h3>
+                                <div> <!-- campo input nascosto -->
+                                  <input type="search" id="searchInput"
+                                    class=" form-control d-none w-auto bg-dark text-light"
+                                    placeholder="Cerca brani..." />
+                                </div>
+                                <div class="d-flex justify-content-end flex-grow-1 align-items-center">
+                                  <a><i class="fa-solid fa-bell me-2"></i></a>
+                                  <a><i class="fa-regular fa-clock me-2"></i></a>
+                                  <a> <i class="fa-solid fa-gear"></i></a>
+                                </div>
+                              </div>
+                              <div class="col col-12 d-md-none my-3">
+                                <a class="btn btn-dark rounded-pill me-3">Musica</a>
+                                <a class="btn btn-dark rounded-pill">Podcast e Show</a>
+                              </div>
+                          </div>
             </section>
             <section class="container my-3">
               <div class="row row-cols-2 row-cols-md-3 g-4" id="cardContainer">
