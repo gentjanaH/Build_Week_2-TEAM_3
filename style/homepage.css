@@ -110,10 +110,33 @@
 }
 
 .colonnaCentraleDesktop {
-  background: linear-gradient(to bottom,
-      #2b2b2b 0%,
-      #1a1a1a 20%,
-      #0f0f0f 35%,
-      #1a1a1a 60%,
-      #1e1e1e 100%);
+  background: linear-gradient(
+    to bottom,
+    #2b2b2b 0%,
+    #1a1a1a 20%,
+    #0f0f0f 35%,
+    #1a1a1a 60%,
+    #1e1e1e 100%
+  );
+}
+
+.colonnaCentraleDesktop {
+  background: linear-gradient(
+    to bottom,
+    #2b2b2b 0%,
+    #1a1a1a 20%,
+    #0f0f0f 35%,
+    #1a1a1a 60%,
+    #1e1e1e 100%
+  );
+}
+
+.playerDesktop {
+  background-color: #181818;
+}
+#shuffleVerde {
+  color: #20d760;
+}
+#repeatVerde {
+  color: #20d760;
 }
