@@ -174,3 +174,15 @@ const likedArtist = () => {
     });
 };
 likedArtist();
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("favorite-icon")) {
+    if (event.target.classList.contains("active")) {
+      event.target.classList.remove("active");
+      event.target.style.color = "#b3b3b3";
+    } else {
+      event.target.classList.add("active");
+      event.target.style.color = "#1db954";
+    }
+  }
+});
