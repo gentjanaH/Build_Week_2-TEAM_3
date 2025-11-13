@@ -1,30 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spotify HOMEPAGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="navbar.css" />
   <link rel="stylesheet" href="./style/homepage.css" />
+
 </head>
 
 <body class="text-white bg-black">
   <div class="container-fluid mx-0">
     <div class="row">
       <!-- colonna a sinistra -->
-      <div class="col d-none d-lg-block col-lg-3">
-        <div class="sidebar border-bottom border-light">
-          <h4 class="text-white mb-4">Spotify</h4>
-
-          <a href="#"><i class="fa-solid fa-ellipsis"></i></a>
-          <a href="#"><i class="fa-solid fa-house"></i>Home</a>
+      <div class="col d-none d-lg-block col-lg-2">
+        <div class="sidebar">
+          <a href="./spotify_homepage.html"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="./spotify_homepage.html"><i class="fa-solid fa-house"></i>Home</a>
           <a href="#"><i class="toggleSearch fa-solid fa-magnifying-glass"></i>Cerca</a>
 
           <a href="#"><i class="fa-solid fa-book"></i>La tua libreria</a>
@@ -57,434 +56,435 @@
           </div>
         </div>
       </div>
-      <!-- colonna centrale -->
-      <div class="col col-12 colonnaCentraleDesktop col-lg-7">
+      <!-- colonna centrale della pagina -->
+      <div class="col col-12 colonnaCentraleDesktop col-lg-8">
         <main>
-          <div>
-            <section class="container">
-              <div class="row">
-                <!-- sezione annunci -->
-                <div class="col d-none d-lg-block col-lg-12">
-                  <!-- inizio carosello -->
-                  <button onclick="hideSection(event)" class="bnt bg-transparent border-0 text-light fw-light"
-                    style="font-size: 12px">
-                    Nascondi annunci
+          <section class="container">
+            <div class="row">
+              <!-- sezione annunci -->
+              <div class="col d-none d-lg-block col-lg-12">
+                <!-- bottone che nasconde il carosello -->
+                <button onclick="hideSection(event)" class="bnt bg-transparent border-0 text-light fw-light"
+                  style="font-size: 12px">
+                  Nascondi annunci
+                </button>
+                <!-- inizio carosello -->
+                <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <!-- prima slide del carosello -->
+                    <div class="carousel-item active">
+                      <div class="card mb-3 text-bg-dark">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./assets/search/image-17.jpg" class="img-fluid rounded-1" alt="..." />
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                              <h5>Album</h5>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-title">Artista</p>
+                              <p class="card-text">
+                                <small class="text-body-secondary">Ascolta il nuovo
+                                  singolo.</small>
+                              </p>
+                              <div>
+                                <!-- bottoni card carosello -->
+                                <button class="btn rounded-pill me-2" style="background-color: #20d760">
+                                  Play
+                                </button>
+                                <button class="btn bg-black rounded-pill text-white me-2">
+                                  Salva
+                                </button>
+                                <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- seconda slide del carosello -->
+                    <div class="carousel-item">
+                      <div class="card mb-3 text-bg-dark">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./assets/search/image-17.jpg" class="img-fluid rounded-1" alt="..." />
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                              <h5>Album</h5>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-title">Artista</p>
+                              <p class="card-text">
+                                <small class="text-body-secondary">Ascolta il nuovo
+                                  singolo.</small>
+                              </p>
+                              <div>
+                                <!-- bottoni -->
+                                <button class="btn rounded-pill me-2" style="background-color: #20d760">
+                                  Play
+                                </button>
+                                <button class="btn bg-black rounded-pill text-white me-2">
+                                  Salva
+                                </button>
+                                <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- terza slide del carosello -->
+                    <div class="carousel-item" id="carosello-annunci">
+                      <div class="card mb-3 text-bg-dark">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="./assets/search/image-17.jpg" class="img-fluid rounded-1" alt="..." />
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                              <h5>Album</h5>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-title">Artista</p>
+                              <p class="card-text">
+                                <small class="text-body-secondary">Ascolta il nuovo
+                                  singolo.</small>
+                              </p>
+                              <div>
+                                <!-- bottoni -->
+                                <button class="btn rounded-pill me-2" style="background-color: #20d760">
+                                  Play
+                                </button>
+                                <button class="btn bg-black rounded-pill text-white me-2">
+                                  Salva
+                                </button>
+                                <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- bottoni che scorrono il carosello -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                   </button>
-                  <div id="carouselExampleAutoplaying" class="carousel slide mt-3" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="card mb-3 text-bg-dark">
-                          <div class="row g-0">
-                            <div class="col-md-4">
-                              <img src="./assets/search/image-17.jpg" class="img-fluid rounded-1" alt="..." />
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body d-flex justify-content-between align-items-center">
-                                <h5>Album</h5>
-                              </div>
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-title">Artista</p>
-                                <p class="card-text">
-                                  <small class="text-body-secondary">Ascolta il nuovo singolo.</small>
-                                </p>
-                                <div>
-                                  <!-- bottoni -->
-                                  <button class="btn rounded-pill me-2" style="background-color: #20d760">
-                                    Play
-                                  </button>
-                                  <button class="btn bg-black rounded-pill text-white me-2">
-                                    Salva
-                                  </button>
-                                  <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="card mb-3 text-bg-dark">
-                          <div class="row g-0">
-                            <div class="col-md-4">
-                              <img src="./assets/search/image-17.jpg" class="img-fluid rounded-1" alt="..." />
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body d-flex justify-content-between align-items-center">
-                                <h5>Album</h5>
-                              </div>
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-title">Artista</p>
-                                <p class="card-text">
-                                  <small class="text-body-secondary">Ascolta il nuovo singolo.</small>
-                                </p>
-                                <div>
-                                  <!-- bottoni -->
-                                  <button class="btn rounded-pill me-2" style="background-color: #20d760">
-                                    Play
-                                  </button>
-                                  <button class="btn bg-black rounded-pill text-white me-2">
-                                    Salva
-                                  </button>
-                                  <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item" id="carosello-annunci">
-                        <div class="card mb-3 text-bg-dark">
-                          <div class="row g-0">
-                            <div class="col-md-4">
-                              <img src="./assets/search/image-17.jpg" class="img-fluid rounded-1" alt="..." />
-                            </div>
-                            <div class="col-md-8">
-                              <div class="card-body d-flex justify-content-between align-items-center">
-                                <h5>Album</h5>
-                              </div>
-                              <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-title">Artista</p>
-                                <p class="card-text">
-                                  <small class="text-body-secondary">Ascolta il nuovo singolo.</small>
-                                </p>
-                                <div>
-                                  <!-- bottoni -->
-                                  <button class="btn rounded-pill me-2" style="background-color: #20d760">
-                                    Play
-                                  </button>
-                                  <button class="btn bg-black rounded-pill text-white me-2">
-                                    Salva
-                                  </button>
-                                  <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                      data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                      data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                      <!-- colonna centrale -->
-                      <div class="col col-12  col-lg-7">
-                        <main>
-                          <div>
-                            <section class="container ">
-                              <div class="row">
-                                <!-- sezione annunci -->
-                                <div class="col d-none d-lg-block col-lg-12">
-                                  <!-- inizio carosello -->
-                                  <button class="bnt bg-transparent border-0 text-light fw-light"
-                                    style="font-size: 12px">
-
-                                  </button>
-                                </div>
-                                <!-- fine carosello -->
-                              </div>
-                              <!-- fine sezione annunci -->
-                              <div class="col col-12 d-flex justify-content-around my-3">
-                                <h3 class="flex-grow-1">Buonasera</h3>
-                                <div> <!-- campo input nascosto -->
-                                  <input type="search" id="searchInput"
-                                    class=" form-control d-none w-auto bg-dark text-light"
-                                    placeholder="Cerca brani..." />
-                                </div>
-                                <div class="d-flex justify-content-end flex-grow-1 align-items-center">
-                                  <a><i class="fa-solid fa-bell me-2"></i></a>
-                                  <a><i class="fa-regular fa-clock me-2"></i></a>
-                                  <a> <i class="fa-solid fa-gear"></i></a>
-                                </div>
-                              </div>
-                              <div class="col col-12 d-md-none my-3">
-                                <a class="btn btn-dark rounded-pill me-3">Musica</a>
-                                <a class="btn btn-dark rounded-pill">Podcast e Show</a>
-                              </div>
-                          </div>
-            </section>
-            <section class="container my-3">
-              <div class="row row-cols-2 row-cols-md-3 g-4" id="cardContainer">
-                <div class="col">
-                  <!-- card1 -->
-                  <div class="card my-3 rounden-start text-bg-dark border-0">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100 px-0">
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-1.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto1" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-2.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto2" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-3.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto3" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-4.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto4" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <div class="col">
-                  <!-- card2 -->
-                  <div class="card my-3 rounden-start text-bg-dark border-0">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100 px-0">
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-5.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto5" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-6.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto6" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-7.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto7" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-8.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto8" />
-                          </div>
+              </div>
+              <!-- colonna centrale -->
+              <div class="col col-12  d-flex justify-content-around my-3">
+                <h3 class="flex-grow-1">Buonasera</h3>
+                <div> <!-- campo input nascosto -->
+                  <input type="search" id="searchInput" class=" form-control d-none w-auto bg-dark text-light"
+                    placeholder="Cerca brani..." />
+                </div>
+                <div class="d-flex justify-content-end flex-grow-1 align-items-center">
+                  <a><i class="fa-solid fa-bell me-2"></i></a>
+                  <a><i class="fa-regular fa-clock me-2"></i></a>
+                  <a> <i class="fa-solid fa-gear"></i></a>
+                </div>
+              </div>
+              <div class="col col-12 d-md-none my-3">
+                <a class="btn btn-dark rounded-pill me-3">Musica</a>
+                <a class="btn btn-dark rounded-pill">Podcast e Show</a>
+              </div>
+            </div>
+          </section>
+          <!-- inizio della sezione con le card statiche -->
+          <section class="container my-3">
+            <div class="row row-cols-2 row-cols-md-3 g-4" id="cardContainer">
+              <!-- inizio card -->
+              <div class="col">
+                <!-- card1 -->
+                <div class="card my-3 rounden-start text-bg-dark border-0">
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row h-100 px-0">
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-1.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto1" />
                         </div>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-2.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto2" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-3.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto3" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-4.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto4" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <!-- card3 -->
-                  <div class="card my-3 rounded-start text-bg-dark border-0">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100">
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-9.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto9" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-10.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto10" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-11.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto11" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-12.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto12" />
-                          </div>
-                        </div>
-                      </div>
 
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <!-- card4 -->
-                  <div class="card my-3 text-bg-dark border-0">
-                    <div class="row h-100">
-                      <div
-                        class="col-5 p-0 position-relative bg-success d-flex align-items-center justify-content-center rounded-start">
-                        <img src="./assets/main/image-17.jpg" class="img-fluid w-100 h-100 opacity-0 rounded-start"
-                          alt="foto17" />
-                        <a href="#" class="position-absolute text-light"><i class="fa-regular fa-heart fs-2"></i></a>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <!-- card5 -->
-                  <div class="card my-3 rounded-start text-bg-dark border-0">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100">
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-13.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto13" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-14.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto14" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-15.jpg"
-                              class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto15" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-16.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto16" />
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <!-- card6 -->
-                  <div class="card my-3 text-bg-dark border-0">
-                    <div class="row h-100">
-                      <div class="col-5 p-0">
-                        <img src="./assets/main/image-17.jpg"
-                          class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="foto17" />
-                      </div>
-
-                      <div class="col-7">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                        </div>
+                    <div class="col-7">
+                      <div class="card-body">
+                        <h5 class="card-title">build week</h5>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </section>
-            <!-- sezione da mobile -->
-            <section class="container d-md-none">
-              <div class="row">
-                <div class="col col-12">
-                  <div class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="row h-100">
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-18.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto18" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/search/image-2.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto02" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/main/image-19.jpg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="fto19" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/search/image-1.jpeg" class="img-fluid w-100 h-100 object-fit-cover"
-                              alt="foto01" />
-                          </div>
+              <div class="col">
+                <!-- card2 -->
+                <div class="card my-3 rounden-start text-bg-dark border-0">
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row h-100 px-0">
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-5.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto5" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-6.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto6" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-7.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto7" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-8.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto8" />
                         </div>
                       </div>
+                    </div>
 
-                      <div class="col-7">
-                        <div class="card-body">
-                          <p>Playlist</p>
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                      <div class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2">
-                        <div>
-                          <a><i class="fa-solid fa-heart favorite-icon"></i></a>
-                          <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                        </div>
-                        <div class="d-flex align-items-center">
-                          <p class="m-0 pe-2">16 Brani</p>
-                          <a class="btn bg-black rounded-circle"><i class="fa-solid fa-play text-white"></i></a>
-                        </div>
+                    <div class="col-7">
+                      <div class="card-body">
+                        <h5 class="card-title">andando al mare</h5>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- 2 -->
-                <div class="col col-12">
-                  <div class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden">
-                    <div class="row">
-                      <div class="col-4">
-                        <div class="row">
-                          <div class="col col-6 p-0">
-                            <img src="./assets/search/image-3.jpg" class="img-fluid w-100" alt="foto03" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/search/image-5.jpg" class="img-fluid w-100" alt="foto05" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/search/image-6.jpg" class="img-fluid w-100" alt="foto06" />
-                          </div>
-                          <div class="col col-6 p-0">
-                            <img src="./assets/search/image-7.jpg" class="img-fluid w-100" alt="foto07" />
-                          </div>
+              </div>
+              <div class="col">
+                <!-- card3 -->
+                <div class="card my-3 rounded-start text-bg-dark border-0">
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row h-100">
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-9.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto9" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-10.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto10" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-11.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto11" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-12.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto12" />
                         </div>
                       </div>
+                    </div>
 
-                      <div class="col-8">
-                        <div class="card-body">
-                          <p>Playlist</p>
-                          <h5 class="card-title">Card title</h5>
-                        </div>
-                      </div>
-                      <div class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2">
-                        <div>
-                          <a><i class="fa-solid fa-heart favorite-icon"></i></a>
-                          <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
-                        </div>
-                        <div class="d-flex align-items-center">
-                          <p class="m-0 pe-2">16 Brani</p>
-                          <a class="btn bg-black rounded-circle"><i class="fa-solid fa-play text-white"></i></a>
-                        </div>
+                    <div class="col-7">
+                      <div class="card-body">
+                        <h5 class="card-title">mix</h5>
                       </div>
                     </div>
                   </div>
                 </div>
-            </section>
-            <!-- sezione desktop -->
-            <section class="container d-none d-md-block" id="like-cont">
-              <div class="row">
-                <div class="col col-12 d-flex justify-content-between align-items-center">
-                  <h5>Altro di ciò che ti piace</h5>
-                  <p><a>VISUALIZZA TUTTO</a></p>
+              </div>
+              <div class="col">
+                <!-- card4 -->
+                <div class="card my-3 text-bg-dark border-0">
+                  <div class="row h-100">
+                    <div
+                      class="col-5 p-0 position-relative bg-success d-flex align-items-center justify-content-center rounded-start">
+                      <img src="./assets/main/image-17.jpg" class="img-fluid w-100 h-100 opacity-0 rounded-start"
+                        alt="foto17" />
+                      <a href="#" class="position-absolute text-light"><i class="fa-regular fa-heart fs-2"></i></a>
+                    </div>
+
+                    <div class="col-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Brani che ti piacciono</h5>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="row" id="test">
-                  <!-- card da aggiungere con JS  -->
+              </div>
+              <div class="col">
+                <!-- card5 -->
+                <div class="card my-3 rounded-start text-bg-dark border-0">
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row h-100">
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-13.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-top-left" alt="foto13" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-14.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto14" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-15.jpg"
+                            class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left" alt="foto15" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-16.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto16" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Pulizie di primavera</h5>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </section>
-          </div>
+              </div>
+              <div class="col">
+                <!-- card6 -->
+                <div class="card my-3 text-bg-dark border-0">
+                  <div class="row h-100">
+                    <div class="col-5 p-0">
+                      <img src="./assets/main/image-17.jpg" class="img-fluid w-100 h-100 object-fit-cover rounded-start"
+                        alt="foto17" />
+                    </div>
+
+                    <div class="col-7">
+                      <div class="card-body">
+                        <h5 class="card-title">Yes weekend</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- fine card -->
+            </div>
+          </section>
+
+          <!-- SEZIONE CENTRALE MOBILE -->
+          <section class="container d-md-none">
+            <div class="row">
+              <div class="col col-12">
+                <div class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden">
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="row h-100">
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-18.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto18" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/search/image-2.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto02" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/main/image-19.jpg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="fto19" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/search/image-1.jpeg" class="img-fluid w-100 h-100 object-fit-cover"
+                            alt="foto01" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-7">
+                      <div class="card-body">
+                        <p>Playlist</p>
+                        <h5 class="card-title">Card title</h5>
+                      </div>
+                    </div>
+                    <div class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2">
+                      <div>
+                        <a><i class="fa-solid fa-heart favorite-icon"></i></a>
+                        <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <p class="m-0 pe-2">16 Brani</p>
+                        <a class="btn bg-black rounded-circle"><i class="fa-solid fa-play text-white"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div class="col col-12">
+                <div class="card my-3 rounded-start text-bg-dark border-0 overflow-hidden">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="row">
+                        <div class="col col-6 p-0">
+                          <img src="./assets/search/image-3.jpg" class="img-fluid w-100" alt="foto03" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/search/image-5.jpg" class="img-fluid w-100" alt="foto05" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/search/image-6.jpg" class="img-fluid w-100" alt="foto06" />
+                        </div>
+                        <div class="col col-6 p-0">
+                          <img src="./assets/search/image-7.jpg" class="img-fluid w-100" alt="foto07" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div class="card-body">
+                        <p>Playlist</p>
+                        <h5 class="card-title">Card title</h5>
+                      </div>
+                    </div>
+                    <div class="col col-11 d-flex justify-content-between align-items-center mx-auto my-2">
+                      <div>
+                        <a><i class="fa-solid fa-heart favorite-icon"></i></a>
+                        <a><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <p class="m-0 pe-2">16 Brani</p>
+                        <a class="btn bg-black rounded-circle"><i class="fa-solid fa-play text-white"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- fine sezione mobile -->
+          <!-- SEZIONE ALBUM - DESKTOP -->
+          <section class="container d-none d-md-block" id="like-cont">
+            <div class="row">
+              <div class="col col-12 d-flex justify-content-between align-items-center">
+                <h5>Altro di ciò che ti piace</h5>
+                <p><a>VISUALIZZA TUTTO</a></p>
+              </div>
+              <div class="row" id="test">
+                <!-- card da aggiungere con JS  -->
+              </div>
+          </section>
+          <!-- fine sezione album -DESKTOP -->
+
         </main>
       </div>
-      <!-- colonna a destra -->
+      <!-- COLONNA DI DESTRA sezione amici-->
       <div id="sezione-amici" class="col d-none d-lg-block col-lg-2">
         <div class="row">
           <div class="col col-12 d-flex justify-content-between align-items-center my-3">
@@ -553,8 +553,28 @@
               </div>
             </div>
           </div>
+          <div class="col col-12">
+            <div class="card mb-3 h-100 bg-black text-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                  <img src="./assets/search/image-9.jpg" class="img-fluid rounded-circle" alt="..." />
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-bottom">
+                      <h6 class="card-title m-0">Gentjana</h6>
+                      <span class="mb-1">12 ore</span>
+                    </div>
+                    <p class="card-text mb-1">Ultimo</p>
+                    <p class="card-text m-0">Solo</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <!-- fine sezione amici -->
     </div>
   </div>
 
@@ -563,7 +583,7 @@
     class="d-none d-lg-block position-fixed bottom-0 start-0 w-100 bg-dark text-white py-2 px-3 border-top z-3 playerDesktop">
     <div class="container-fluid">
       <div class="row align-items-center g-0">
-        <!-- Sezione sinistra -->
+        <!-- Sezione sinistra barra musicale -->
         <div class="col-md-4 d-flex align-items-center gap-3">
           <div class="d-flex">
             <img src="./assets/search/image-9.jpg" alt="cover" class="cover-img" />
@@ -577,7 +597,7 @@
           </div>
         </div>
 
-        <!-- Sezione centrale -->
+        <!-- Sezione centrale barra musicale -->
         <div class="col-md-4 d-flex flex-column align-items-center">
           <div class="d-flex gap-3 align-items-center">
             <button class="btn bg-transparent text-light">
@@ -606,7 +626,7 @@
           </div>
         </div>
 
-        <!-- Sezione destra -->
+        <!-- Sezione destra barra musicale -->
         <div class="col-md-4 d-flex justify-content-end align-items-center gap-2">
           <i class="fa-solid fa-volume-high"></i>
           <div style="height: 5px;" class="progress w-25 bg-secondary " role="progressbar" aria-label="Basic example"
@@ -617,7 +637,7 @@
       </div>
     </div>
   </aside>
-  <!-- fine DESKTOP -->
+
   <!-- BARRA RIPRODUZIONE MOBILE -->
   <aside>
     <div
@@ -643,7 +663,8 @@
   <!-- FINE MOBILE -->
   <!-- fine barra di riproduzione musica -->
 
-  <!-- navbar visibile da mobile -->
+
+  <!-- navbar in fondo alla pagina visibile da mobile -->
   <nav class="navbar navbar-dark fixed-bottom d-lg-none" id="spotify-bar-bottom">
     <div class="container-fluid justify-content-around">
       <a class="nav-link text-center" href="./spotify_homepage.html">
@@ -663,6 +684,7 @@
       </a>
     </div>
   </nav>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

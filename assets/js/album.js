@@ -62,7 +62,9 @@ const albumTracks = (albumObj) => {
                 <span class="track-title">${track.title}</span>
                 <a href="/spotify_artistPage.html?id=${
                   track.artist.id
-                }" class="track-artist">${track.artist.name}</a>
+                }" class="text-decoration-none" ><span class="track-artist">${
+      track.artist.name
+    }</span></a>
               </div>
 
               <span class="track-plays">${track.rank.toLocaleString()}</span>
