@@ -13,24 +13,32 @@ const hideSection = function (e) {
     button.innerText = "Mostra novità";
   }
 };
+
 const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";
 const input = document.getElementById("searchInput");
 // const inputValue = input.value;
 // console.log(inputValue);
 const cardContainer = document.getElementById("cardContainer");
 const allColCards = cardContainer.getElementsByClassName("col");
+
 // funzione per mostrare il campo di ricerca
-const searchSide = document.getElementById("toggleSearch");
+const searchSide = document.getElementsByClassName("toggleSearch");
 const search = function () {
-  searchSide.addEventListener("click", function (e) {
-    e.preventDefault();
-    input.classList.toggle("d-none");
-    if (!input.classList.contains("d-none")) {
-      input.focus();
-    }
-  });
+  for (let i = 0; i < searchSide.length; i++) {
+    searchSide[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      input.classList.toggle("d-none");
+      if (!input.classList.contains("d-none")) {
+        input.focus();
+      }
+    });
+
+  }
+
+
 };
 search();
+
 // function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
   fetch(endpoint + parameter)
@@ -57,7 +65,7 @@ const finder = function (parameter) {
                         <div class="col-5 p-0">
                             <img
                                 src="${songImg}"
-                                class="img-fluid object-fit-cover rounded-start w-100 h-100"
+                                class="img-fluid object-fit-cover rounded-start h-100 w-100"
                                 alt="image of ${titleShort}'s album"
                             />
                         </div>
@@ -65,10 +73,10 @@ const finder = function (parameter) {
                         <div class="col-7">
                           <div class="card-body d-flex flex-column justify-content-between h-100 w-100">
                           <div>
-                            <h5 class="card-title">${titleShort}</h5>
+                            <h6 class="card-title">${titleShort}</h6>
                             <p>${artist}</p>
                             </div>
-                          <p>Durata: ${minutes}:${seconds}</p>
+                          <p style="font-size:12px;">Durata: ${minutes}:${seconds}</p>
                           </div>
                         </div>
                       </div>
@@ -101,16 +109,16 @@ input.addEventListener("input", (event) => {
   }
 
 
-
-  // input.addEventListener("input", (event) => {
-  //     console.log("Input event:", event.target.value);
-  //     parameter = event.target.value;
-  //     console.log(parameter);
-  //     if (parameter.length >= 1) {
-  //         finder(parameter);
-  //     } else {
-  //         cardContainer.innerHTML = ``;
-
-  //     }
-
 })
+
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("favorite-icon")) {
+    if (event.target.classList.contains("active")) {
+      event.target.classList.remove("active");
+      event.target.style.color = "#b3b3b3";
+    } else {
+      event.target.classList.add("active");
+      event.target.style.color = "#1db954";
+    }
+  }
+});
