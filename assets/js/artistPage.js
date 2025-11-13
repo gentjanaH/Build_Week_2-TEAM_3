@@ -86,6 +86,55 @@ const getArtist = function () {
           // FINE MANIPOLAZIONE
         }
       });
+      tracksArray.forEach((track, index) => {
+        if (index < 3) {
+          const albumId = track.album.id;
+          const albumName = track.album.title;
+          const albumImg = track.album.cover_medium;
+          const albumContainer = document.getElementById("albumPopolari");
+          albumContainer.innerHTML += `
+          <div class="col col-md-4 contenitoreAlbum">
+              <div
+                class="card"
+                style="background-color: transparent; color: white"
+              >
+                <img
+                  src="${albumImg}"
+                  class="card-img-top"
+                  alt="immagine-${albumName}"
+                />
+                <div class="card-body sffondoCardAlbum p-0 pt-1">
+                  <a href="/spotify_albumPage.html?id=${albumId}" class="card-title">${albumName}</a>
+                </div>
+              </div>
+            </div>`;
+          const albumContainerM = document.getElementById(
+            "albumPopolariMobile"
+          );
+          albumContainerM.innerHTML += `
+            <div class="col col-12">
+              <div
+                class="card cardAlbumMobile mb-3 j"
+                style="max-height: 150px"
+              >
+                <div class="row g-0">
+                  <div class="col-4">
+                    <img
+                      src="${albumImg}"
+                      class="img-fluid immagineAlbumMobile"
+                      alt="immagine-${albumName}"
+                    />
+                  </div>
+                  <div class="col-8">
+                    <div class="card-body sfondoCardAlbum">
+                      <a href="/spotify_albumPage.html?id=${albumId} "class="card-title">${albumName}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>`;
+        }
+      });
     })
     .catch((err) => {
       console.log("ERRORE", err);
