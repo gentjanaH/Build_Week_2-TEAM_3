@@ -7,47 +7,134 @@
   text-decoration: none;
   padding: 8px 0;
   font-size: 15px;
-  transition: color 0.2s ease;
 }
-
 .sidebar a:hover {
   color: #fff;
 }
-
 .section-title {
   margin-top: 20px;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
-  color: #888;
+  color: #777;
 }
 
-/* Play button */
-.btn-success {
+/*  SFONDO GRADIENT  */
+.album-wrapper {
+  background: linear-gradient(to bottom, #c97d74 0%, #000 300px);
+  min-height: 100vh;
+}
+
+/* Header */
+.album-header {
+  padding-bottom: 0;
+}
+
+/* Pulsante play principale */
+.play-btn {
+  width: 56px;
+  height: 56px;
   background-color: #1db954;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
-.btn-success:hover {
+.play-btn:hover {
   background-color: #1ed760;
 }
 
-/* Hover brani */
+/* Icone cuore/menu header */
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-radius: 4px;
+  position: relative;
+  transition: background 0.2s ease;
+}
 .track-row:hover {
-  background-color: #2a2a2a;
+  background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
 }
 
-/* Icone */
-.fa-heart.active {
-  color: #1db954 !important;
+/* Numero traccia */
+.track-index {
+  width: 40px;
+  text-align: center;
+  color: #aaa;
+  position: relative;
 }
 
-/* Mobile navbar */
+/* Numero visibile normalmente */
+.track-number {
+  transition: opacity 0.15s ease;
+}
+
+/* Icona play che sostituisce il numero */
+.play-hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.15s ease;
+  color: #1db954;
+}
+
+/* Hover */
+.track-row:hover .play-hover {
+  opacity: 1;
+}
+.track-row:hover .track-number {
+  opacity: 0;
+}
+
+/* Titolo + artista */
+.track-title-block {
+  flex-grow: 1;
+  padding-left: 10px;
+}
+.track-title {
+  font-size: 16px;
+  color: #fff;
+}
+.track-artist {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+/* Riproduzioni */
+.track-plays {
+  width: 140px;
+  text-align: right;
+  color: #bbb;
+}
+
+/* Durata */
+.track-duration {
+  width: 60px;
+  text-align: right;
+  color: #bbb;
+}
+
+/* Mobile Navbar */
 #spotify-bar-bottom {
   background: #121212;
   border-top: 1px solid #333;
-}
-
-.album-header {
-  background: transparent;
-  padding-bottom: 0;
 }
