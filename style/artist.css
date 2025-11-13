@@ -1,14 +1,13 @@
-/* CSS PER LA SIDEBAR */
-/* .sidebar {
+.sidebar {
   background-color: #000000;
   height: 100vh;
   padding: 20px 15px;
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
+  width: 250px;
   overflow-y: auto;
-} */
+}
 
 .sidebar a {
   display: flex;
@@ -72,25 +71,71 @@
 .rounded-bottom-left {
   border-bottom-left-radius: 0.5rem;
 }
-
-/* CSS PER IL PLAYER */
-.cover-img {
-  width: 60px;
-  height: 60px;
+.artistHeader {
+  background-image: url(assets/main/image-3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.album-cover {
+  width: 3.5vw;
+  height: 3.5vw;
   object-fit: cover;
 }
+.imgPiacciono {
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  min-width: 50px;
 
-.progress-bar {
-  accent-color: #1db954;
-  /* verde Spotify */
+  border-radius: 50%;
+}
+#nomeArtista {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+}
+.playerPrincipale {
+  background-color: rgb(30, 215, 96);
+}
+.ascoltatoriTotali {
+  color: #8c8c8c;
 }
 
-.volume-bar {
-  width: 100px;
-  accent-color: #1db954;
+.durataCanzone {
+  color: #8c8c8c;
+}
+#nomeArtista {
+  font-style: italic;
+}
+#ascoltatoriMensili {
+  color: #bbb9b9;
+}
+.visAltro {
+  color: #8c8c8c;
+}
+.diNomeArtista {
+  color: #8c8c8c;
+}
+.annoAlbum {
+  color: #8c8c8c;
+}
+.immagineAlbumMobile {
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+  min-width: 50px;
+}
+.cardAlbumMobile {
+  background-color: transparent;
+  color: white;
 }
 
-/* NAV MOBILE */
-#spotify-bar-bottom {
-  height: 60px;
+#colonnaCentrale {
+  background: linear-gradient(
+    to bottom,
+    #2b2b2b 0%,
+    #1a1a1a 20%,
+    #0f0f0f 35%,
+    #1a1a1a 60%,
+    #1e1e1e 100%
+  );
 }
