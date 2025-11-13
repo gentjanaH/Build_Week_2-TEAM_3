@@ -31,6 +31,7 @@ const search = function () {
   });
 };
 search();
+// function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
   fetch(endpoint + parameter)
     .then((res) => {
@@ -39,52 +40,35 @@ const finder = function (parameter) {
       } else throw new Error(res.status);
     })
     .then((results) => {
+      cardContainer.innerHTML = ``;
       results.data.forEach((song, i) => {
         const titleShort = song.title_short;
         const artist = song.artist.name;
         const duration = song.duration;
+        const minutes = Math.floor(duration / 60);
+        const seconds = String(duration % 60).padStart(2, "0");
+
+        const songImg = song.album.cover_medium;
         const resultN = i + 1;
         cardContainer.innerHTML += `
         <div class="col">
-                    <div class="card my-3 rounded-start text-bg-dark border-0">
-                      <div class="row">
-                        <div class="col-5">
-                          <div class="row h-100 px-0">
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-1.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-top-left"
-                                alt="foto1"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-2.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto2"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-3.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover rounded-bottom-left"
-                                alt="foto3"
-                              />
-                            </div>
-                            <div class="col col-6 p-0">
-                              <img
-                                src="./assets/main/image-4.jpg"
-                                class="img-fluid w-100 h-100 object-fit-cover"
-                                alt="foto4"
-                              />
-                            </div>
-                          </div>
+                    <div class="card my-3 rounded-start text-bg-dark border-0 h-100">
+                      <div class="row h-100">
+                        <div class="col-5 p-0">
+                            <img
+                                src="${songImg}"
+                                class="img-fluid object-fit-cover rounded-start w-100 h-100"
+                                alt="image of ${titleShort}'s album"
+                            />
                         </div>
 
                         <div class="col-7">
-                          <div class="card-body">
+                          <div class="card-body d-flex flex-column justify-content-between h-100 w-100">
+                          <div>
                             <h5 class="card-title">${titleShort}</h5>
                             <p>${artist}</p>
+                            </div>
+                          <p>Durata: ${minutes}:${seconds}</p>
                           </div>
                         </div>
                       </div>
@@ -97,21 +81,22 @@ const finder = function (parameter) {
       console.log("Errore " + err);
     });
 };
-const hideCards = (par) => {
-  for (let i = 0; i < allColCards.length; i++) {
-    allColCards[i].classList.toggle("d-none");
-  }
-};
+
 let parameter;
 input.addEventListener("input", (event) => {
   console.log("Input event:", event.target.value);
   parameter = event.target.value;
   console.log(parameter);
   if (parameter.length >= 1) {
-    hideCards();
+    for (let i = 0; i < allColCards.length; i++) {
+      allColCards[i].classList.add("d-none");
+    }
+    finder(parameter);
   } else {
-    cardContainer.innerHTML = ``;
-    hideCards();
+    // cardContainer.innerHTML = ``;
+    for (let i = 0; i < allColCards.length; i++) {
+      allColCards[i].classList.remove("d-none");
+    }
   }
-  finder(parameter);
+  //   finder(parameter);
 });
