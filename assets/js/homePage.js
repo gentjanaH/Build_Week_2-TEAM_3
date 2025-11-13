@@ -107,18 +107,70 @@ input.addEventListener("input", (event) => {
       allColCards[i].classList.remove("d-none");
     }
   }
-
-
-})
-
-document.addEventListener("click", function (event) {
-  if (event.target.classList.contains("favorite-icon")) {
-    if (event.target.classList.contains("active")) {
-      event.target.classList.remove("active");
-      event.target.style.color = "#b3b3b3";
-    } else {
-      event.target.classList.add("active");
-      event.target.style.color = "#1db954";
-    }
-  }
+  finder(parameter);
 });
+
+//Generazione random di artisti in home
+const artistList = [
+  "Eminem",
+  "Geolier",
+  "Fantasm",
+  "Adele",
+  "Coldplay",
+  "Rihanna",
+  "Pupo",
+  "Shiva",
+  "Ultimo",
+  "OneRepublic",
+];
+
+const likedCont = document.getElementById("test");
+
+const likedArtist = () => {
+  const randomArtist =
+    artistList[Math.floor(Math.random() * artistList.length)];
+  fetch(endpoint + randomArtist)
+    .then((response) => {
+      if (response.ok) {
+        console.log(`Il server è collegato correttamente ${response}`);
+        return response.json();
+      } else {
+        throw new Error(`Il server non risponde ${response.status}`);
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      likedCont.innerHTML = ``;
+      data.data.forEach((artist, i) => {
+        const artistName = artist.artist.name;
+        const artistPicture = artist.artist.picture_medium;
+
+        if (i < 4) {
+          likedCont.innerHTML += `
+                          <div class="col col-md-4 col-lg-3">
+                    <!-- card da aggiungere -->
+                    <div class="card text-bg-dark">
+                      <img
+                        src="${artistPicture}"
+                        class="card-img-top img-thumbnail"
+                        alt="img-07"
+                        alt="${artistName} foto"
+                      />
+                      <div class="card-body">
+                        <h5 class="card-title">${artistName}</h5>
+                        <p class="card-text">
+                          Some quick example text to build on the card title and
+                          make up the bulk of the card’s content.
+                        </p>
+                      </div>
+                    </div>
+                  </div>`;
+          i++;
+        }
+      });
+    })
+    .catch((error) => {
+      console.log(`Errore del server ${error}`);
+    });
+};
+likedArtist();
