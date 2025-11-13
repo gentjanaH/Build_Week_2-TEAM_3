@@ -138,7 +138,7 @@ function getAverageColor(image, sampleSize = 50) {
 albumImage.addEventListener("load", function () {
   try {
     const [r, g, b] = getAverageColor(albumImage);
-    const gradient = `linear-gradient(to bottom, rgb(${r},${g},${b}) 0%, rgb(${r},${g},${b}) 25%, #000 40%)`;
+    const gradient = `linear-gradient(to bottom, rgb(${r},${g},${b}) 0%, rgb(${r},${g},${b}) 30%, #000 60%)`;
 
     document.body.style.background = gradient;
     console.log("Colore medio:", r, g, b);
