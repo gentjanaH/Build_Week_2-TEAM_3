@@ -56,7 +56,7 @@ const getArtist = function () {
           const title = track.title;
           const duration = track.duration;
           const rank = track.rank;
-          const trackId = track.id;
+          const trackId = track.album.id;
           const songPreview = track.preview;
           const trackThumbnail = track.album.cover_medium;
           const minutes = Math.floor(duration / 60);
@@ -72,7 +72,7 @@ const getArtist = function () {
                 alt="image-album-${title}"
               />
               </div>
-                <p class="px-1 px-md-3 titoloCanzone flex-grow-1">${title}</p>
+                <a href="/spotify_albumPage.html?id=${trackId}" class="px-1 px-md-3 titoloCanzone flex-grow-1">${title}</a>
                 <div class="d-flex">
                 <p class="px-1 px-md-3 ascoltatoriTotali">${rank}</p>
                 <p class="px-1 px-md-3 durataCanzone">${minutes}:${seconds}</p>
