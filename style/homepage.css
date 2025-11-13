@@ -105,7 +105,7 @@
 }
 
 /* sezione "altro di cio che ti piace" */
-#sezione-altro p:first-of-type {
+#like-cont a {
   font-size: 10px;
 }
 
