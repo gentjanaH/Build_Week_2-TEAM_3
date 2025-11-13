@@ -1,279 +1,140 @@
-@media (min-width: 992px) {
-  .sidebar {
-    display: block;
-  }
-  .main-content {
-    margin-left: 250px;
-  }
-}
-
-.sidebar {
-  background-color: #000;
-  height: 100vh;
-  padding: 20px 15px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 250px;
-  overflow-y: auto;
-}
-
+/* Sidebar */
 .sidebar a {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   color: #b3b3b3;
   text-decoration: none;
   padding: 8px 0;
   font-size: 15px;
 }
-
 .sidebar a:hover {
   color: #fff;
 }
-
 .section-title {
-  margin-top: 25px;
-  font-size: 13px;
+  margin-top: 20px;
+  font-size: 12px;
   text-transform: uppercase;
-  color: #888;
+  color: #777;
 }
 
-/*  MAIN CONTENT */
-.main-content {
-  padding: 20px;
+/*  SFONDO GRADIENT  */
+.album-wrapper {
+  background: linear-gradient(to bottom, #c97d74 0%, #000 300px);
   min-height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
 }
 
-/*  ALBUM HEADER*/
+/* Header */
 .album-header {
-  /* background: linear-gradient(to bottom, #d6b658, #121212 60%); */
+  padding-bottom: 0;
 }
 
-.album-cover {
-  width: 200px;
-}
-
-/* PLAY BUTTON */
+/* Pulsante play principale */
 .play-btn {
   width: 56px;
   height: 56px;
   background-color: #1db954;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
-
 .play-btn:hover {
   background-color: #1ed760;
 }
 
-#spotify-bar-bottom {
-  background: #121212;
-  border-top: 1px solid #333;
-}
-
-/* RESPONSIVE - HEADER*/
-@media (max-width: 576px) {
-  .album-header .d-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-  .album-header .ms-4 {
-    margin-left: 0 !important;
-    margin-top: 12px;
-  }
-  .album-cover {
-    width: 160px !important;
-  }
-}
-
-/* FEATURED TRACK*/
-.featured-track {
-  background-color: #181818;
-  border-radius: 8px;
-}
-
-.featured-img {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-}
-
-.play-lg {
-  width: 48px;
-  height: 48px;
-  background-color: #1db954;
-  border: none;
-}
-
-.play-lg:hover {
-  background-color: #1ed760;
-}
-
-@media (max-width: 576px) {
-  .featured-track {
-    flex-direction: column;
-    text-align: center;
-  }
-  .featured-img {
-    margin-bottom: 10px;
-  }
-  .play-lg {
-    margin-top: 10px;
-  }
-}
-
-/* TRACKLIST HEADER*/
-.track-header {
+/* Icone cuore/menu header */
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: transparent;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 8px 0;
-  margin-top: 20px;
-  border-bottom: 1px solid #282828;
-  color: #a7a7a7;
-  font-size: 13px;
-  letter-spacing: 0.7px;
+  transition: background 0.2s ease;
+}
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.track-header i {
-  font-size: 14px;
-}
-
-/* TRACK ROW*/
 .track-row {
   display: flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 10px 0;
   border-radius: 4px;
-  transition: background-color 0.2s ease-in-out;
+  position: relative;
+  transition: background 0.2s ease;
 }
-
 .track-row:hover {
-  background-color: #2a2a2a;
+  background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
 }
 
-/* NUMERO + PLAY HOVER */
+/* Numero traccia */
 .track-index {
-  width: 32px;
+  width: 40px;
   text-align: center;
-  margin-right: 12px;
-  color: #b3b3b3;
+  color: #aaa;
   position: relative;
 }
 
-.track-index .play-hover {
-  display: none;
+/* Numero visibile normalmente */
+.track-number {
+  transition: opacity 0.15s ease;
+}
+
+/* Icona play che sostituisce il numero */
+.play-hover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.15s ease;
   color: #1db954;
 }
 
-.track-row:hover .track-index .track-number {
-  display: none;
+/* Hover */
+.track-row:hover .play-hover {
+  opacity: 1;
+}
+.track-row:hover .track-number {
+  opacity: 0;
 }
 
-.track-row:hover .track-index .play-hover {
-  display: inline-block;
-}
-
-/* TITOLO + ARTISTA */
+/* Titolo + artista */
 .track-title-block {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 10px;
 }
-
 .track-title {
-  color: #ffffff;
-  margin: 0;
-  font-size: 15px;
+  font-size: 16px;
+  color: #fff;
 }
-
 .track-artist {
-  color: #a7a7a7;
   font-size: 13px;
-  margin-top: 1px;
-  line-height: 1.1;
+  color: #b3b3b3;
 }
 
-/* RIPRODUZIONI */
+/* Riproduzioni */
 .track-plays {
   width: 140px;
-  color: #b3b3b3;
-  font-size: 14px;
-}
-
-.track-row > .track-plays {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-right: 0;
-}
-
-/* DURATA */
-.track-duration {
-  width: 50px;
   text-align: right;
-  color: #b3b3b3;
-  font-size: 14px;
+  color: #bbb;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .track-plays {
-    display: none;
-  }
+/* Durata */
+.track-duration {
+  width: 60px;
+  text-align: right;
+  color: #bbb;
 }
 
-/*  COLORI E SFONDI */
-.parteOpaca {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.colonnaSinistraAlbum {
-  background-color: rgba(0, 0, 0);
-}
-.track-title {
-  color: #ffffff;
-}
-
-.track-artist,
-.track-plays,
-.track-duration,
-.track-index {
-  color: #b3b3b3;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  color: #b3b3b3;
-  cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.icon-btn:hover {
-  color: #ffffff;
-  transform: scale(1.1);
-}
-.icon-btn.active i {
-  color: #1db954;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-}
-
-.colonnaDestraAlbum {
-  background-color: #000;
-}
-.album-header {
-  background-color: transparent;
+/* Mobile Navbar */
+#spotify-bar-bottom {
+  background: #121212;
+  border-top: 1px solid #333;
 }
