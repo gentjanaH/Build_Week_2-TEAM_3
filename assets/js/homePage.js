@@ -32,10 +32,7 @@ const search = function () {
         input.focus();
       }
     });
-
   }
-
-
 };
 search();
 
@@ -51,7 +48,9 @@ const finder = function (parameter) {
       cardContainer.innerHTML = ``;
       results.data.forEach((song, i) => {
         const titleShort = song.title_short;
+        const songId = song.id;
         const artist = song.artist.name;
+        const artistId = song.artist.id;
         const duration = song.duration;
         const minutes = Math.floor(duration / 60);
         const seconds = String(duration % 60).padStart(2, "0");
@@ -74,7 +73,7 @@ const finder = function (parameter) {
                           <div class="card-body d-flex flex-column justify-content-between h-100 w-100">
                           <div>
                             <h6 class="card-title">${titleShort}</h6>
-                            <p>${artist}</p>
+                            <a href="./spotify_artistPage.html?id=${artistId}"><p>${artist}</p></a>
                             </div>
                           <p style="font-size:12px;">Durata: ${minutes}:${seconds}</p>
                           </div>
@@ -89,7 +88,6 @@ const finder = function (parameter) {
       console.log("Errore " + err);
     });
 };
-
 
 let parameter;
 input.addEventListener("input", (event) => {

@@ -1,4 +1,7 @@
-const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/412";
+const endpoint = "https://striveschool-api.herokuapp.com/api/deezer/artist/";
+const url = window.location.search;
+const urlId = new URLSearchParams(url);
+const artistId = urlId.get("id");
 // funzione callback all interno della MAIN
 const getTrackList = function (tracklist) {
   return fetch(tracklist)
@@ -15,7 +18,7 @@ const getTrackList = function (tracklist) {
 };
 // FUNZIONE PRINCIPALE
 const getArtist = function () {
-  fetch(endpoint)
+  fetch(endpoint + artistId)
     .then((res) => {
       if (res.ok) {
         return res.json();
