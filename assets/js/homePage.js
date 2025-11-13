@@ -147,12 +147,12 @@ const likedArtist = () => {
 
         if (i < 4) {
           likedCont.innerHTML += `
-                  <div class="col col-md-4 col-lg-3">
+                  <div class="col col-md-4 col-lg-3 pb-5">
                     <!-- card da aggiungere -->
-                    <div class="card text-bg-dark">
+                    <div class="card bg-dark d-flex align-items-center">
                       <img
                         src="${artistPicture}"
-                        class="card-img-top img-thumbnail h-75"
+                        class="card-img-top h-75 w-75 mt-2"
                         alt="img-07"
                         alt="${artistName} foto"
                       />
