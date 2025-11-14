@@ -162,6 +162,7 @@ const displayRandomArtists = () => {
           const artistPicture = artistData.picture_medium;
           const artistId = artistData.id;
           const albumTitle = albumData.title;
+          const albumPicture = albumData.cover_big;
 
           console.log(data);
 
@@ -180,16 +181,43 @@ const displayRandomArtists = () => {
                 </div>
               </div>
             </div>`;
-
-          const c1 = document.getElementById("c-1");
-          const c1Name = document.getElementById("c1-Aname");
-          const c1NameArtist = document.getElementById("c1-name");
-          c1.setAttribute("src", artistPicture);
-          c1.setAttribute("alt", artistNameDisplay);
-          c1Name.innerText = albumTitle;
-          c1NameArtist.innerText = artistNameDisplay;
-
-          console.log(artistNameDisplay, artistNameDisplay, artistNameDisplay);
+          const carousel = document.getElementById("carouselInner");
+          carousel.innerHTML += `
+           <div class="carousel-item">
+                      <div class="card mb-3 text-bg-dark">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src="${albumPicture}" class="img-fluid rounded-1" alt="immagine-dell-album${albumTitle}"/>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                              <h5>Album</h5>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">${albumTitle}</h5>
+                              <p class="card-title">${artistNameDisplay}</p>
+                              <p class="card-text">
+                                <small class="text-body-secondary">Ascolta ${albumTitle}.</small>
+                              </p>
+                              <div>
+                                <!-- bottoni card carosello -->
+                                <button class="btn rounded-pill me-2" style="background-color: #20d760">
+                                  Play
+                                </button>
+                                <button class="btn bg-black rounded-pill text-white me-2">
+                                  Salva
+                                </button>
+                                <a href="#"><i class="fa-solid fa-ellipsis text-light"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          `;
+          const carouselItems =
+            document.getElementsByClassName("carousel-item");
+          carouselItems[0].classList.add("active");
         }
       })
       .catch((error) => {
