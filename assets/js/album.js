@@ -61,11 +61,9 @@ const albumTracks = (albumObj) => {
 
               <div class="track-title-block">
                 <span class="track-title">${track.title}</span>
-                <a href="/spotify_artistPage.html?id=${
-                  track.artist.id
-                }" class="text-decoration-none" ><span class="track-artist">${
-      track.artist.name
-    }</span></a>
+                <a href="/spotify_artistPage.html?id=${track.artist.id
+      }" class="text-decoration-none" ><span class="track-artist">${track.artist.name
+      }</span></a>
               </div>
 
               <span class="track-plays">${track.rank.toLocaleString()}</span>
@@ -95,6 +93,30 @@ const albumTracks = (albumObj) => {
       nameTracks.innerText = albuOb.artist.name;
       console.log(albuOb);
       imgPlay.setAttribute("src", albuOb.album.cover);
+      const songUrl = albuOb.preview
+      const playBtn = document.getElementById("playBtn")
+      let statoAudio = false
+      let audio
+      try {
+        audio = new Audio(songUrl);
+        audio.preload = "auto";
+      } catch (err) {
+        console.error("Errore nella creazione dell'audio:", err);
+      }
+      // Play
+      playBtn.addEventListener("click", () => {
+        if (audio && statoAudio === false) {
+          audio.play().catch(err => {
+            console.error("Errore durante la riproduzione:", err);
+
+          });
+          statoAudio = true
+        } else {
+          audio.pause()
+          statoAudio = false
+        }
+      });
+
     });
   });
 };

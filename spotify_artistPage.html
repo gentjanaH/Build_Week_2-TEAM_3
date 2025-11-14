@@ -1,150 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Spotify - Artist</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="style/artist.css" />
-  </head>
 
-  <body class="text-white bg-black">
-    <div class="container-fluid mx-0">
-      <div class="row">
-        <!-- colonna a sinistra -->
-        <div class="col d-none d-lg-block col-lg-2">
-          <div class="sidebar">
-            <a href="./spotify_homepage.html"
-              ><i class="fa-solid fa-ellipsis"></i
-            ></a>
-            <a href="./spotify_homepage.html"
-              ><i class="fa-solid fa-house"></i>Home</a
-            >
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Cerca</a>
-            <a href="#"><i class="fa-solid fa-book"></i>La tua libreria</a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spotify - Artist</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="style/artist.css" />
+</head>
 
-            <div class="section-title mt-4">Playlist</div>
-            <a href="#"><i class="fa-solid fa-square-plus"></i>Crea playlist</a>
-            <a href="#"
-              ><i class="fa-solid fa-heart"></i>Brani che ti piacciono</a
-            >
-            <a href="#"
-              ><i class="fa-solid fa-bookmark text-success"></i>I tuoi
-              episodi</a
-            >
+<body class="text-white bg-black">
+  <div class="container-fluid mx-0">
+    <div class="row">
+      <!-- colonna a sinistra -->
+      <div class="col d-none d-lg-block col-lg-2">
+        <div class="sidebar">
+          <a href="./spotify_homepage.html"><i class="fa-solid fa-ellipsis"></i></a>
+          <a href="./spotify_homepage.html"><i class="fa-solid fa-house"></i>Home</a>
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i>Cerca</a>
+          <a href="#"><i class="fa-solid fa-book"></i>La tua libreria</a>
 
-            <!-- fake play list -->
-            <div class="border-top">
-              <ul class="list-group-item list-unstyled fs-6">
-                <a href="#">
-                  <li>Canzoni da cantare in auto</li>
-                </a>
-                <a href="#">
-                  <li>Musica allegra</li>
-                </a>
-                <a href="#">
-                  <li>Quando sono triste</li>
-                </a>
-                <a href="#">
-                  <li>La mia playlist</li>
-                </a>
-                <a href="#">
-                  <li>Nel mare blu</li>
-                </a>
-              </ul>
-            </div>
+          <div class="section-title mt-4">Playlist</div>
+          <a href="#"><i class="fa-solid fa-square-plus"></i>Crea playlist</a>
+          <a href="#"><i class="fa-solid fa-heart"></i>Brani che ti piacciono</a>
+          <a href="#"><i class="fa-solid fa-bookmark text-success"></i>I tuoi
+            episodi</a>
+
+          <!-- fake play list -->
+          <div class="border-top">
+            <ul class="list-group-item list-unstyled fs-6">
+              <a href="#">
+                <li>Canzoni da cantare in auto</li>
+              </a>
+              <a href="#">
+                <li>Musica allegra</li>
+              </a>
+              <a href="#">
+                <li>Quando sono triste</li>
+              </a>
+              <a href="#">
+                <li>La mia playlist</li>
+              </a>
+              <a href="#">
+                <li>Nel mare blu</li>
+              </a>
+            </ul>
           </div>
         </div>
-        <!-- colonna centrale -->
-        <div id="colonnaCentrale" class="col col-12 col-lg-8">
-          <div
-            id="artistHeader"
-            class="d-flex flex-column justify-content-end align-items-start artistHeader"
-            style="height: 35vh"
-          >
-            <div class="container m-0" id="artistHead">
-              <h3 class="fs-5 mb-0">
-                <i
-                  style="color: rgb(115, 157, 247)"
-                  class="fa-solid fa-circle-check"
-                ></i>
-                Artista Verificato
-              </h3>
-              <h1 class="text-uppercase ps-2 mb-0" id="nomeArtista">
-                NomeArtista
-              </h1>
-              <h4 id="ascoltatoriMensili" class="mt-1 fs-6">
-                <span id="numeroAscoltatori "></span>ascoltatori mensili
-              </h4>
+      </div>
+      <!-- colonna centrale -->
+      <div id="colonnaCentrale" class="col col-12 col-lg-8">
+        <div id="artistHeader" class="d-flex flex-column justify-content-end align-items-start artistHeader"
+          style="height: 35vh">
+          <div class="container m-0" id="artistHead">
+            <h3 class="fs-5 mb-0">
+              <i style="color: rgb(115, 157, 247)" class="fa-solid fa-circle-check"></i>
+              Artista Verificato
+            </h3>
+            <h1 class="text-uppercase ps-2 mb-0" id="nomeArtista">
+              NomeArtista
+            </h1>
+            <h4 id="ascoltatoriMensili" class="mt-1 fs-6">
+              <span id="numeroAscoltatori "></span>ascoltatori mensili
+            </h4>
+          </div>
+        </div>
+        <!--Pulsanti-->
+        <div class="d-flex align-items-center mb-4 mt-4">
+          <button class="btn playerPrincipale rounded-circle d-flex justify-content-center align-items-center me-3"
+            style="width: 56px; height: 56px">
+            <i class="fa-solid fa-play fs-5"></i>
+          </button>
+          <button class="btn btn-outline-light px-3 me-2">FOLLOWING</button>
+          <button class="btn btn-outline-light border-0 fs-5">⋯</button>
+        </div>
+
+        <!--Brani popolari e mi piace-->
+        <div class="container-fuid">
+          <div class="row">
+            <!--inizio canzone-->
+            <div class="braniPopolari col col-12 col-md-7 col-lg-8 mt-2">
+              <h4>Popolari</h4>
+              <div id="containerTracks"></div>
+              <div id="brano" class="brano mt-3"></div>
+
+              <!--fine canzone-->
             </div>
-          </div>
-          <!--Pulsanti-->
-          <div class="d-flex align-items-center mb-4 mt-4">
-            <button
-              class="btn playerPrincipale rounded-circle d-flex justify-content-center align-items-center me-3"
-              style="width: 56px; height: 56px"
-            >
-              <i class="fa-solid fa-play fs-5"></i>
-            </button>
-            <button class="btn btn-outline-light px-3 me-2">FOLLOWING</button>
-            <button class="btn btn-outline-light border-0 fs-5">⋯</button>
-          </div>
-
-          <!--Brani popolari e mi piace-->
-          <div class="container-fuid">
-            <div class="row">
-              <!--inizio canzone-->
-              <div class="braniPopolari col col-12 col-md-7 col-lg-8 mt-2">
-                <h4>Popolari</h4>
-                <div id="containerTracks"></div>
-                <div id="brano" class="brano mt-3"></div>
-
-                <!--fine canzone-->
-              </div>
-              <div id="braniPiacciono" class="col col-md-5 col-lg-4 mt-2">
-                <h4 class="fs-5">Brani che ti Piacciono</h4>
-                <div class="piaccionoFotoTesto row mt-3">
-                  <div class="col col-3">
-                    <img
-                      class="imgPiacciono"
-                      src="assets/main/image-7.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col col-8 ms-2">
-                    <h5 class="fs-5">Hai messo mi piace a 11 brani</h5>
-                    <p class="diNomeArtista fs-6">
-                      di <span>nome artista</span>
-                    </p>
-                  </div>
+            <div id="braniPiacciono" class="col col-md-5 col-lg-4 mt-2">
+              <h4 class="fs-5">Brani che ti Piacciono</h4>
+              <div class="piaccionoFotoTesto row mt-3">
+                <div class="col col-3">
+                  <img class="imgPiacciono" src="assets/main/image-7.jpg" alt="" />
+                </div>
+                <div class="col col-8 ms-2">
+                  <h5 class="fs-5">Hai messo mi piace a 11 brani</h5>
+                  <p class="diNomeArtista fs-6">
+                    di <span>nome artista</span>
+                  </p>
                 </div>
               </div>
             </div>
-            <p class="visAltro mt-4">VISUALIZZA ALTRO</p>
           </div>
+          <p class="visAltro mt-4">VISUALIZZA ALTRO</p>
+        </div>
 
-          <h4 class="mt-4">Discografia</h4>
+        <h4 class="mt-4">Discografia</h4>
 
-          <h5 class="mt-3">Uscite popolari</h5>
-          <!--Prima sezione Album-->
-          <div
-            class="row albumPopolari mt-3 flex-row d-none d-md-flex"
-            id="albumPopolari"
-          >
-            <!-- <div class="col col-md-4 contenitoreAlbum">
+        <h5 class="mt-3">Uscite popolari</h5>
+        <!--Prima sezione Album-->
+        <div class="row albumPopolari mt-3 flex-row d-none d-md-flex" id="albumPopolari">
+          <!-- <div class="col col-md-4 contenitoreAlbum">
               <div
                 class="card"
                 style="background-color: transparent; color: white"
@@ -160,13 +130,10 @@
                 </div>
               </div>
             </div> -->
-          </div>
+        </div>
 
-          <div
-            class="row albumPopolariMobile mt-3 d-md-none"
-            id="albumPopolariMobile"
-          >
-            <!-- <div class="col col-12">
+        <div class="row albumPopolariMobile mt-3 d-md-none" id="albumPopolariMobile">
+          <!-- <div class="col col-12">
               <div
                 class="card cardAlbumMobile mb-3 j"
                 style="max-height: 150px"
@@ -188,11 +155,11 @@
                 </div>
               </div>
             </div> -->
-          </div>
+        </div>
 
-          <!--seconda sezione album-->
+        <!--seconda sezione album-->
 
-          <!-- <h5 class="mt-4 mb-4">Nuove uscite</h5>
+        <!-- <h5 class="mt-4 mb-4">Nuove uscite</h5>
           <div class="row albumNuovi mt-3">
             <div class="col col-lg-4 contenitoreAlbum">
               <div
@@ -244,134 +211,116 @@
             </div>
           </div> -->
 
-          <!--fine colonna centrale-->
-        </div>
+        <!--fine colonna centrale-->
+      </div>
 
-        <!-- colonna a destra -->
-        <div id="sezione-amici" class="col d-none d-lg-block col-lg-2">
-          <div class="row">
-            <div
-              class="col col-12 d-flex justify-content-between align-items-center my-3"
-            >
-              <div>
-                <p class="m-0">Attività amici</p>
-              </div>
-              <div>
-                <a><i class="fa-solid fa-user-group"></i></a>
-                <a><i class="fa-solid fa-x"></i></a>
-              </div>
+      <!-- colonna a destra -->
+      <div id="sezione-amici" class="col d-none d-lg-block col-lg-2">
+        <div class="row">
+          <div class="col col-12 d-flex justify-content-between align-items-center my-3">
+            <div>
+              <p class="m-0">Attività amici</p>
             </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="https://i.scdn.co/image/ab67757000003b82fd6e56e4d8c4afe9860b5d41"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Virgil</h6>
-                        <span class="mb-1">4 ore</span>
-                      </div>
-                      <p class="card-text mb-1">Imagine Dragons</p>
-                      <p class="card-text m-0">Loom</p>
+            <div>
+              <a><i class="fa-solid fa-user-group"></i></a>
+              <a><i class="fa-solid fa-x"></i></a>
+            </div>
+          </div>
+          <div class="col col-12">
+            <div class="card mb-3 h-100 bg-black text-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                  <img src="https://i.scdn.co/image/ab67757000003b82fd6e56e4d8c4afe9860b5d41"
+                    class="img-fluid rounded-circle" alt="..." />
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-bottom">
+                      <h6 class="card-title m-0">Virgil</h6>
+                      <span class="mb-1">4 ore</span>
                     </div>
+                    <p class="card-text mb-1">Imagine Dragons</p>
+                    <p class="card-text m-0">Loom</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="https://i.scdn.co/image/ab67757000003b82085547420597435cca6843cf"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Riccardo</h6>
-                        <span class="mb-1">6 ore</span>
-                      </div>
-                      <p class="card-text mb-1">Pink Floyd</p>
-                      <p class="card-text m-0">Animals</p>
+          </div>
+          <div class="col col-12">
+            <div class="card mb-3 h-100 bg-black text-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                  <img src="https://i.scdn.co/image/ab67757000003b82085547420597435cca6843cf"
+                    class="img-fluid rounded-circle" alt="..." />
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-bottom">
+                      <h6 class="card-title m-0">Riccardo</h6>
+                      <span class="mb-1">6 ore</span>
                     </div>
+                    <p class="card-text mb-1">Pink Floyd</p>
+                    <p class="card-text m-0">Animals</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="https://i.scdn.co/image/ab67757000003b8233af833bcaaf0c4722f4b5e2"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Emanuele</h6>
-                        <span class="mb-1">8 ore</span>
-                      </div>
-                      <p class="card-text mb-1">Linking Park</p>
-                      <p class="card-text m-0">In the end</p>
+          </div>
+          <div class="col col-12">
+            <div class="card mb-3 h-100 bg-black text-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                  <img src="https://i.scdn.co/image/ab67757000003b8233af833bcaaf0c4722f4b5e2"
+                    class="img-fluid rounded-circle" alt="..." />
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-bottom">
+                      <h6 class="card-title m-0">Emanuele</h6>
+                      <span class="mb-1">8 ore</span>
                     </div>
+                    <p class="card-text mb-1">Linking Park</p>
+                    <p class="card-text m-0">In the end</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="https://i.scdn.co/image/ab67757000003b8268f0d1822ec2192ac7c60d41"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Gentjana</h6>
-                        <span class="mb-1">12 ore</span>
-                      </div>
-                      <p class="card-text mb-1">Ultimo</p>
-                      <p class="card-text m-0">Solo</p>
+          </div>
+          <div class="col col-12">
+            <div class="card mb-3 h-100 bg-black text-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                  <img src="https://i.scdn.co/image/ab67757000003b8268f0d1822ec2192ac7c60d41"
+                    class="img-fluid rounded-circle" alt="..." />
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-bottom">
+                      <h6 class="card-title m-0">Gentjana</h6>
+                      <span class="mb-1">12 ore</span>
                     </div>
+                    <p class="card-text mb-1">Ultimo</p>
+                    <p class="card-text m-0">Solo</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col col-12">
-              <div class="card mb-3 h-100 bg-black text-white">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3">
-                    <img
-                      src="https://i.scdn.co/image/ab67757000003b8216b1411ebdc60d36147f72ca"
-                      class="img-fluid rounded-circle"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="col-md-9">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-bottom">
-                        <h6 class="card-title m-0">Raul</h6>
-                        <span class="mb-1">14 ore</span>
-                      </div>
-                      <p class="card-text mb-1">Geolier</p>
-                      <p class="card-text m-0">Ultima poesia</p>
+          </div>
+          <div class="col col-12">
+            <div class="card mb-3 h-100 bg-black text-white">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-3">
+                  <img src="https://i.scdn.co/image/ab67757000003b8216b1411ebdc60d36147f72ca"
+                    class="img-fluid rounded-circle" alt="..." />
+                </div>
+                <div class="col-md-9">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-bottom">
+                      <h6 class="card-title m-0">Raul</h6>
+                      <span class="mb-1">14 ore</span>
                     </div>
+                    <p class="card-text mb-1">Geolier</p>
+                    <p class="card-text m-0">Ultima poesia</p>
                   </div>
                 </div>
               </div>
@@ -379,40 +328,33 @@
           </div>
         </div>
       </div>
-
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"
-      ></script>
     </div>
-    <nav
-      class="navbar navbar-dark fixed-bottom d-lg-none"
-      id="spotify-bar-bottom"
-    >
-      <div class="container-fluid justify-content-around">
-        <a class="nav-link text-center" href="#">
-          <i class="fa-solid fa-house"></i>
-          <span class="d-block">Home</span>
-        </a>
 
-        <a class="nav-link text-center" href="#">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <span class="d-block">Cerca</span>
-        </a>
 
-        <a class="nav-link text-center" href="#">
-          <i class="fa-regular fa-folder-closed"></i>
-          <span class="d-block">La tua libreria</span>
-        </a>
-      </div>
-    </nav>
+  </div>
+  <nav class="navbar navbar-dark fixed-bottom d-lg-none" id="spotify-bar-bottom">
+    <div class="container-fluid justify-content-around">
+      <a class="nav-link text-center" href="#">
+        <i class="fa-solid fa-house"></i>
+        <span class="d-block">Home</span>
+      </a>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/js/artistPage.js"></script>
-  </body>
+      <a class="nav-link text-center" href="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span class="d-block">Cerca</span>
+      </a>
+
+      <a class="nav-link text-center" href="#">
+        <i class="fa-regular fa-folder-closed"></i>
+        <span class="d-block">La tua libreria</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/artistPage.js"></script>
+</body>
+
 </html>
