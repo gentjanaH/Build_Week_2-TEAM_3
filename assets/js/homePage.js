@@ -20,6 +20,7 @@ const input = document.getElementById("searchInput");
 // console.log(inputValue);
 const cardContainer = document.getElementById("cardContainer");
 const allColCards = cardContainer.getElementsByClassName("col");
+const corouselApi = document.getElementById("carouselExampleAutoplaying");
 
 // funzione per mostrare il campo di ricerca
 const searchSide = document.getElementsByClassName("toggleSearch");
@@ -152,12 +153,17 @@ const displayRandomArtists = () => {
         }
       })
       .then((data) => {
+        console.log(data);
         if (data.data && data.data.length > 0) {
           const artistData = data.data[0].artist;
+          const albumData = data.data[0].album;
 
           const artistNameDisplay = artistData.name;
           const artistPicture = artistData.picture_medium;
           const artistId = artistData.id;
+          const albumTitle = albumData.title;
+
+          console.log(data);
 
           likedCont.innerHTML += `
             <div class="col col-md-4 col-lg-3 pb-5">
@@ -174,6 +180,16 @@ const displayRandomArtists = () => {
                 </div>
               </div>
             </div>`;
+
+          const c1 = document.getElementById("c-1");
+          const c1Name = document.getElementById("c1-Aname");
+          const c1NameArtist = document.getElementById("c1-name");
+          c1.setAttribute("src", artistPicture);
+          c1.setAttribute("alt", artistNameDisplay);
+          c1Name.innerText = albumTitle;
+          c1NameArtist.innerText = artistNameDisplay;
+
+          console.log(artistNameDisplay, artistNameDisplay, artistNameDisplay);
         }
       })
       .catch((error) => {
@@ -196,4 +212,4 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// test shuffle
+//CAROSELLO
