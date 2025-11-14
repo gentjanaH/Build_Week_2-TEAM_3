@@ -37,6 +37,10 @@ const search = function () {
 };
 search();
 
+const playerDesk = document.getElementById("playerDesktop");
+const selectCanzone = document.querySelectorAll(".canzone");
+const imgPlay = document.getElementById("imgPlay");
+
 // function che fa partire il fetch con il DOM manipulation
 const finder = function (parameter) {
   fetch(endpoint + parameter)
@@ -66,8 +70,8 @@ const finder = function (parameter) {
                         <div class="col-5 p-0">
                             <img
                                 src="${songImg}"
-                                class="img-fluid object-fit-cover rounded-start h-100 w-100"
-                                alt="image of ${titleShort}'s album"
+                                class="img-fluid object-fit-cover rounded-start h-100 w-100 canzone"
+                                alt="image of ${titleShort}'s album" id="${songId}"
                             />
                         </div>
 
@@ -84,6 +88,20 @@ const finder = function (parameter) {
                     </div>
                   </div>
         `;
+      });
+      const canzone = document.querySelectorAll(".canzone");
+      canzone.forEach((e, i) => {
+        e.addEventListener("click", () => {
+          playerDesktop.classList.add("d-lg-block");
+          console.log(results.data[i]);
+          const data = results.data[i];
+          const imgPlay = document.getElementById("imgPlay");
+          const nameTracksPlay = document.getElementById("nameTracksPlayer");
+          const nameArtistPlayer = document.getElementById("nameArtistPlayer");
+          imgPlay.setAttribute("src", data.album.cover);
+          nameTracksPlay.innerText = data.album.title;
+          nameArtistPlayer.innerText = data.artist.name;
+        });
       });
     })
     .catch((err) => {
@@ -240,4 +258,4 @@ document.addEventListener("click", function (event) {
   }
 });
 
-//CAROSELLO
+//player desktop
