@@ -10,6 +10,7 @@ const albumImage = document.getElementById("album-image");
 const albumName = document.getElementById("album-name");
 const albumData = document.getElementById("album-data");
 const trackContainer = document.getElementById("track-list");
+const playerDesktop = document.getElementById("playerDesktop");
 
 //CLASSE OGGETTI DA PRELEVARE IN API
 class artistData {
@@ -53,7 +54,7 @@ const albumTracks = (albumObj) => {
 
     trackContainer.innerHTML += `
              <div class="track-row">
-              <span class="track-index">
+              <span class="track-index testiamo" id="${track.id}">
                 <span class="track-number">${i + 1}</span>
                 <i class="fa-solid fa-play play-hover"></i>
               </span>
@@ -72,6 +73,29 @@ const albumTracks = (albumObj) => {
               <span class="track-duration">${minutes}:${seconds}</span>
             </div>
                     `;
+
+    // let trackId = document.getElementById(`${track.id}`);
+    // console.log(trackId);
+    // trackId.addEventListener("click", () => {
+    //   playerDesktop.classList.add(".d-lg-block");
+    //   console.log("Test");
+    // });
+  });
+  const prova = document.querySelectorAll(".testiamo");
+  prova.forEach((e, i) => {
+    e.addEventListener("click", () => {
+      console.log("test", e);
+      playerDesktop.classList.add("d-lg-block");
+      console.log(albumObj.tracks.data[i]);
+      const albuOb = albumObj.tracks.data[i];
+      const nameArtist = document.getElementById("nameTracksPlayer");
+      const nameTracks = document.getElementById("nameArtistPlayer");
+      const imgPlay = document.getElementById("imgPlay");
+      nameArtist.innerText = albuOb.title;
+      nameTracks.innerText = albuOb.artist.name;
+      console.log(albuOb);
+      imgPlay.setAttribute("src", albuOb.album.cover);
+    });
   });
 };
 //FETCH API
