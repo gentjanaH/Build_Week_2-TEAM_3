@@ -219,9 +219,9 @@ const displayRandomArtists = () => {
                               </p>
                               <div>
                                 <!-- bottoni card carosello -->
-                                <button class="btn rounded-pill me-2" style="background-color: #20d760">
+                                <a class="btn rounded-pill me-2 cliccami" style="background-color: #20d760" href="/spotify_albumPage.html?id=">
                                   Play
-                                </button>
+                                </a>
                                 <button class="btn bg-black rounded-pill text-white me-2">
                                   Salva
                                 </button>
@@ -237,6 +237,18 @@ const displayRandomArtists = () => {
             document.getElementsByClassName("carousel-item");
           carouselItems[0].classList.add("active");
         }
+        const carosselloBtn = document.querySelectorAll(".cliccami");
+
+        carosselloBtn.forEach((btn, i) => {
+          btn.addEventListener("click", () => {
+            console.log(data.data[i].album.id);
+            cons;
+            btn.setAttribute(
+              "href",
+              `/spotify_albumPage.html?id=${data.data[i].album.id}`
+            );
+          });
+        });
       })
       .catch((error) => {
         console.error(`Errore nel processare ${artistName}: ${error}`);
